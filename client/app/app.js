@@ -5,7 +5,6 @@
 angular.module('DigiSite', [
 
 	//Angular
-	'ngResource',
 	'ngAnimate',
 	'ngTouch',
 	'ngCookies',
@@ -21,6 +20,7 @@ angular.module('DigiSite', [
 	//Common services and directives
 	'Common.Utils.StringUtils.Service',
 	'Common.Utils.StorageUtils.Service',
+	'Common.Layout.detectScrolling.Directive',
 
 	//App modules
 	'DigiSite.Layout',
@@ -46,7 +46,7 @@ angular.module('DigiSite', [
  * Config
  */
 .config(function(
-	$provide, $urlRouterProvider, $locationProvider, ResourceProvider
+	$provide, $urlRouterProvider, $locationProvider
 ) {
 
 	//HTML 5 mode browsing
@@ -54,9 +54,6 @@ angular.module('DigiSite', [
 
 	//Default route
 	$urlRouterProvider.otherwise('/');
-
-	//Default API url
-	ResourceProvider.setBaseURL('/api');
 
 	//Exception handling
 	$provide.decorator('$exceptionHandler', function($log, $delegate) {

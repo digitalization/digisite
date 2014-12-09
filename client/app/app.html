@@ -2,8 +2,7 @@
 <html ng-controller="AppCtrl">
 <head>
 	<base href="/" />
-	<title>My Application</title>
-
+	<title>Digitalization</title>
 	<meta charset="utf-8" />
 	<meta name="author" content="" />
 	<meta name="description" content="" />
@@ -15,19 +14,28 @@
     <script src="js/<%= file %>"></script><% }); %>
 </head>
 
-<body lang="en">
-<header ng-controller="NavCtrl">
-	<nav>
-		<menu ng-cloak>
-			<li ng-repeat="item in Menu.items"><a ui-sref="{{item.sref}}" ui-sref-active="active">{{item.title}}</a></li>
-		</menu>
-	</nav>
+<body lang="nl" detect-scrolling>
+<header ng-controller="NavCtrl" ng-class="{'is-scrolling': isScrolling}">
+	<div class="padder">
+		<img class="logo pointer" src="assets/images/site/logo-header.png" ui-sref="home" />
+		<nav>
+			<menu class="no-spacing" ng-cloak>
+				<li ng-repeat="item in Menu.main"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}">{{item.title}}</a></li>
+			</menu>
+		</nav>
+	</div>
 </header>
 <main ui-view>
 
 </main>
 <footer>
-
+	<nav>
+		<menu class="no-spacing" ng-cloak>
+			<li ng-repeat="item in Menu.footer"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}">{{item.title}}</a></li>
+		</menu>
+	</nav>
+	<p class="copyright">Copyright &copy; 2015 Digitalization</p>
+	<img src="assets/images/site/logo-footer.png">
 </footer>
 <script>
 	angular.element(document).ready(function() {
@@ -35,6 +43,12 @@
         	angular.bootstrap(document.getElementsByTagName('html')[0], ['DigiSite']);
         }, 10);
     });
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-26149031-1', 'www.digitalization.nl');
+    ga('send', 'pageview');
 </script>
 </body>
 </html>

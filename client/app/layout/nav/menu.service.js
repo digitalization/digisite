@@ -14,10 +14,24 @@ angular.module('DigiSite.Layout.Nav.Menu.Service', [])
 	 */
 	var Menu = {
 
-		//Define the menu items for the site
-		items: [
+		//Main menu
+		main: [
+			{sref: "company", title: "Bedrijf"},
+			{sref: "software", title: "Software"},
+			{sref: "projects", title: "Projecten"},
+			{sref: "vacancies", title: "Vacatures"},
+			{sref: "contact", title: "Contact"}
+		],
+
+		//Footer menu
+		footer: [
 			{sref: "home", title: "Home"},
-			{sref: "test.browse", title: "Test"},
+			{sref: "company", title: "Bedrijf"},
+			{sref: "software", title: "Software"},
+			{sref: "projects", title: "Projecten"},
+			{sref: "vacancies", title: "Vacatures"},
+			{sref: "contact", title: "Contact"},
+			{sref: "sitemap", title: "Sitemap"}
 		]
 	};
 

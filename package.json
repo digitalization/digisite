@@ -1,10 +1,10 @@
 {
-  "name": "Digitalization Website",
-  "version": "8.0.0",
+  "name": "Digi-Website",
+  "version": "7.0.0",
   "author": "Digitalization",
   "description": "",
   "homepage": "http://www.digitalization.nl",
-  "repository": "https://github.com/Digitalization/Digitalization-Website",
+  "repository": "https://github.com/Digitalization/Digi-Website",
   "dependencies": {},
   "optionalDependencies": {},
   "devDependencies": {
