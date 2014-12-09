@@ -1,0 +1,22 @@
+
+/**********************************************************************************
+ * Buttons
+ */
+
+ /* Buttons */
+ .button {
+ 	float: left;
+ 	border: 0;
+ 	background: @colorBgButton;
+ 	color: @colorWhite;
+ 	cursor: pointer;
+ 	font-size: @fontSizeSmaller;
+ 	font-weight: @fontWeightNormal;
+ 	text-transform: uppercase;
+ 	padding: @lineHeight*0.3 @lineHeight;
+ 	margin: 0 @lineHeight @lineHeight 0;
+ 	.font-smoothing(antialiased);
+ }
+ .button.primary {
+ 	background: @colorBgButtonPrimary;
+ }

@@ -1,0 +1,120 @@
+
+/**********************************************************************************
+ * Fontello icons
+ */
+
+@font-face {
+  font-family: 'Fontello';
+  src: url('@{urlAssets}fonts/fontello.eot');
+  src: url('@{urlAssets}fonts/fontello.eot#iefix') format('embedded-opentype'),
+	   url('@{urlAssets}fonts/fontello.woff') format('woff'),
+	   url('@{urlAssets}fonts/fontello.ttf') format('truetype'),
+	   url('@{urlAssets}fonts/fontello.svg#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+	font-family: 'Fontello';
+	src: url('@{urlAssets}fonts/fontello.svg#fontello') format('svg');
+  }
+}
+
+/* Class definition */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'Fontello';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-align: center;
+	text-transform: none;
+	text-decoration: none;
+	speak: none;
+	display: inline-block;
+	margin-right: .2rem;
+	font-size: 110%;
+}
+[class^="icon-"]:empty:before, [class*=" icon-"]:empty:before {
+	margin: 0 !important;
+	width: 100%;
+}
+
+/* Icons */
+.icon-right-triangle:before { content: '\e800'; } /* '' */
+.icon-cancel:before { content: '\e801'; } /* '' */
+.icon-star:before { content: '\e802'; } /* '' */
+.icon-last:before { content: '\e803'; } /* '' */
+.icon-share:before { content: '\e804'; } /* '' */
+.icon-gplus:before { content: '\e805'; } /* '' */
+.icon-twitter:before { content: '\e806'; } /* '' */
+.icon-left-triangle:before { content: '\e807'; } /* '' */
+.icon-fast-forward:before { content: '\e808'; } /* '' */
+.icon-right:before { content: '\e809'; } /* '' */
+.icon-first:before { content: '\e80a'; } /* '' */
+.icon-fast-backward:before { content: '\e80b'; } /* '' */
+.icon-comments:before { content: '\e80c'; } /* '' */
+.icon-link:before { content: '\e80d'; } /* '' */
+.icon-play:before { content: '\e80e'; } /* '' */
+.icon-stop:before { content: '\e80f'; } /* '' */
+.icon-quote:before { content: '\e810'; } /* '' */
+.icon-comment:before { content: '\e811'; } /* '' */
+.icon-arrows:before { content: '\e812'; } /* '' */
+.icon-left:before { content: '\e813'; } /* '' */
+.icon-facebook:before { content: '\e814'; } /* '' */
+.icon-ok:before { content: '\e815'; } /* '' */
+.icon-upload:before { content: '\e816'; } /* '' */
+.icon-cog:before { content: '\e817'; } /* '' */
+
+/* Spinning animation */
+.spinning::before {
+	-webkit-animation: 		spin 1.5s infinite linear;
+	-moz-animation: 		spin 1.5s infinite linear;
+	animation: 				spin 1.5s infinite linear;
+
+	/* Animation center compensation - margins should be symmetric */
+	margin-left: .2rem;
+}
+
+/* Spin keyframes */
+@-webkit-keyframes spin {
+  0% {
+	-webkit-transform: rotate(0deg);
+  }
+  100% {
+	-webkit-transform: rotate(359deg);
+  }
+}
+@-moz-keyframes spin {
+  0% {
+	-moz-transform: rotate(0deg);
+  }
+  100% {
+	-moz-transform: rotate(359deg);
+  }
+}
+@-ms-keyframes spin {
+  0% {
+	transform: rotate(0deg);
+  }
+  100% {
+	transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+	-o-transform: rotate(0deg);
+  }
+  100% {
+	-o-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+	transform: rotate(0deg);
+  }
+  100% {
+	transform: rotate(359deg);
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-controller="AppCtrl">
+<head>
+	<base href="/" />
+	<title>My Application</title>
+
+	<meta charset="utf-8" />
+	<meta name="author" content="" />
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<% styles.forEach(function (file) { %>
+    <link rel="stylesheet" type="text/css" media="screen" href="<%= file %>" /><% }); %>
+    <link rel="shortcut icon" href="favicon.png" />
+    <% scripts.forEach(function (file) { %>
+    <script src="js/<%= file %>"></script><% }); %>
+</head>
+
+<body lang="en">
+<header ng-controller="NavCtrl">
+	<nav>
+		<menu ng-cloak>
+			<li ng-repeat="item in Menu.items"><a ui-sref="{{item.sref}}" ui-sref-active="active">{{item.title}}</a></li>
+		</menu>
+	</nav>
+</header>
+<main ui-view>
+
+</main>
+<footer>
+
+</footer>
+<script>
+	angular.element(document).ready(function() {
+        setTimeout(function() {
+        	angular.bootstrap(document.getElementsByTagName('html')[0], ['DigiSite']);
+        }, 10);
+    });
+</script>
+</body>
+</html>

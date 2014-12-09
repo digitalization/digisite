@@ -1,0 +1,8 @@
+/node_modules
+/temp
+/public
+npm-debug.log
+karma.log
+karma-unit.js
+.DS_Store
+Thumbs.db

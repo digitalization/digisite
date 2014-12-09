@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Front-end
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} 		!(^api/.*|^assets/.*|^css/.*|^js/.*)
+	RewriteRule ^(.*)$ 				index.html [L]
+
+	# API
+	RewriteRule ^(.*)$ 				api.php/$1 [L]
+</IfModule>
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 /index.html
+</IfModule>
