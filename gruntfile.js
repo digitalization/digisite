@@ -16,6 +16,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-bump');
 	grunt.loadNpmTasks('grunt-text-replace');
 	grunt.loadNpmTasks('grunt-ng-annotate');
+	grunt.loadNpmTasks('grunt-fontello');
 
 	/**
 	 * Set base path
@@ -167,6 +168,20 @@ module.exports = function(grunt) {
 					from: /'([0-9]\.[0-9]+\.[0-9]+)'/i,
 					to: '\'<%= pkg.version %>\''
 				}]
+			}
+		},
+
+		/**
+		 * Fontello task
+		 */
+		fontello: {
+			dist: {
+				options: {
+					config: 'assets/fonts/fontello.json',
+					fonts: 'assets/fonts',
+					styles: 'assets/fonts',
+					force: true
+				}
 			}
 		},
 

@@ -303,11 +303,22 @@ article.right {
 aside {
 	width: 40%;
 	float: right;
+	position: relative;
 	img {
 		.box-shadow(10px 10px 30px rgba(0,0,0,0.3));
 	}
 	img + img {
 		margin-top: @lineHeight;
+	}
+	.large-icon {
+		position: absolute;
+		bottom: -1rem;
+		right: 1rem;
+		opacity: 0.15;
+	}
+	.large-icon::before {
+		font-size: 14rem;
+		width: auto !important;
 	}
 }
 article.wider + aside {
