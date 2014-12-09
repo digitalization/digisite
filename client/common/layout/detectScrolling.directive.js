@@ -16,6 +16,7 @@ angular.module('Common.Layout.detectScrolling.Directive', [])
 			var dispatchEvent = function(offset) {
 				var elem = this;
 				scope.$apply(function() {
+					$rootScope.isScrolling = (offset > 0);
 					$rootScope.$broadcast('detectedScrolling', elem, offset);
 				});
 			};

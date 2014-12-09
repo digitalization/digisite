@@ -119,11 +119,6 @@ i, em, .italic {
  * Site layout
  */
 
-//Shared
-main, footer {
-	background: @colorBgMain;
-}
-
 //Header
 header {
 	position: fixed;
@@ -175,8 +170,8 @@ header {
 		}
 	}
 }
-.is-scrolling {
-	.box-shadow(0 0 30px rgba(0, 0, 0, 0.6));
+header.is-scrolling {
+	.box-shadow(@shadowBig);
 	background: fadeout(@colorBgDarkGrey, 5%);
 	.padder {
 		border-bottom: 0;
@@ -198,6 +193,8 @@ section {
 	position: relative;
 	padding: 5rem 6rem;
 	overflow: auto;
+	background: @colorBgMain;
+	.transition(box-shadow .2s linear);
 }
 
 //Hero section
@@ -232,6 +229,11 @@ section {
 	}
 }
 
+//Section after hero gets a higher z-index so we can slide over
+.hero + section {
+	z-index: 2;
+}
+
 //Gray section
 .gray {
 	background: @colorBgLightGrey;
@@ -255,6 +257,16 @@ section {
 //No bottom padding section
 .no-bottom {
 	padding-bottom: 0;
+}
+
+//On top sections
+.on-top {
+	z-index: 5;
+}
+
+//Shadowed section
+.shadow {
+	.box-shadow(@shadowBig);
 }
 
 //Blue box aside

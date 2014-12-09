@@ -21,6 +21,7 @@ angular.module('DigiSite', [
 	'Common.Utils.StringUtils.Service',
 	'Common.Utils.StorageUtils.Service',
 	'Common.Layout.detectScrolling.Directive',
+	'Common.Layout.coverUp.Directive',
 
 	//App modules
 	'DigiSite.Layout',
