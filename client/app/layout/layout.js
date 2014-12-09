@@ -3,7 +3,8 @@
  * Module definition and dependencies
  */
 angular.module('DigiSite.Layout', [
-	'DigiSite.Layout.Nav'
+	'DigiSite.Layout.Nav',
+	'DigiSite.Layout.Technical.Directive'
 ])
 
 /**

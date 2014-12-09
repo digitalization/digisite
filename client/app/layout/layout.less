@@ -369,6 +369,33 @@ footer {
 }
 
 /*********************************************************************************************
+ * Technical box
+ ***/
+
+technical {
+	display: block;
+	margin-bottom: @lineHeight;
+	width: 70%;
+	margin-left: 1.5rem;
+	position: relative;
+	padding: 2rem 3rem;
+	background-color: rgba(220, 220, 220, 0.2);
+	font-size: @fontSizeSmaller;
+	.box-shadow(5px 5px 10px rgba(0,0,0,0.1));
+	ul, li {
+		list-style-type: none;
+		margin: 0;
+	}
+	i {
+		position: absolute;
+		font-size: 3rem;
+		top: 1rem;
+		right: 2rem;
+		opacity: 0.4;
+	}
+}
+
+/*********************************************************************************************
  * Notes
  ***/
 
