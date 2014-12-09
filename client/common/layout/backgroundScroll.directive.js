@@ -38,7 +38,7 @@ angular.module('Common.Layout.backgroundScroll.Directive', [
 
 				//Determine margin
 				var margin = Math.round(offset * factor);
-				element.css({'background-position': 'center ' + -1 * margin + 'px'});
+				element.css({'background-position':  -1 * margin + 'px ' + -1 * margin + 'px'});
 			});
 		}
 	};
