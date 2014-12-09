@@ -18,9 +18,10 @@ angular.module('Common.Layout.coverUp.Directive', [
 			var factor = attrs.coverUp || 1;
 			scope.$on('detectedScrolling', function(event, elem, offset) {
 				var margin = Math.round(offset * factor);
-				if (margin < element[0].clientHeight) {
-					element.css({marginBottom: -1 * margin + 'px'});
+				if (margin > element[0].clientHeight) {
+					margin = element[0].clientHeight;
 				}
+				element.css({marginBottom: -1 * margin + 'px'});
 			});
 		}
 	};
