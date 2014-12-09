@@ -2,7 +2,7 @@
 /**
  * Module definition and dependencies
  */
-angular.module('Common.Various.BackgroundImage.Directive', [])
+angular.module('Common.Layout.backgroundImage.Directive', [])
 
 /**
  * Directive definition
