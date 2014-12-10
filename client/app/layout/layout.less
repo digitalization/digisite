@@ -128,16 +128,18 @@ header {
 	width: 100%;
 	padding: 0 2rem;
 	.padder {
-		padding: 1rem 0;
+		padding: .625rem 0;
 		height: @heightHeader;
 		border-bottom: 1px solid fadeout(@colorWhite, 50%);
-		.transition(all .2s linear);
 	}
-	.transition(all .2s linear);
 	.logo {
-		height: @heightHeader - 2rem;
+		height: @heightLogo;
 		width: auto;
 		float: left;
+	}
+	.transition(all .2s linear);
+	.padder, .logo {
+		.transition(all .2s linear);
 	}
 	nav {
 		float: right;
@@ -147,11 +149,11 @@ header {
 				list-style:	none;
 				vertical-align: top;
 				text-align: right;
-				line-height: @heightHeader - 2rem;
+				line-height: @heightLogo;
 				a {
 					display: inline-block;
 					position: relative;
-					height: @heightHeader - 2rem;
+					height: @heightLogo;
 					padding: 0 0 0 3rem;
 					font-size: @fontSizeNormal;
 					font-weight: @fontWeightLight;
@@ -171,14 +173,20 @@ header {
 	}
 }
 header.is-scrolling {
-	.box-shadow(@shadowBig);
+	.box-shadow(@shadowSections);
 	background: fadeout(@colorBgDarkGrey, 5%);
 	.padder {
 		border-bottom: 0;
+		height: @heightHeaderScrolling;
+	}
+	.logo {
+		height: @heightLogoScrolling;
 	}
 	menu {
 		li {
+			line-height: @heightLogoScrolling;
 			a {
+				height: @heightLogoScrolling;
 				.text-shadow(none);
 			}
 			a:hover {
@@ -208,13 +216,13 @@ section {
 	h1, h2 {
 		.text-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
 		color: @colorWhite;
-		font-size: 4rem;
 		text-align: center;
 		letter-spacing: 1px;
-		margin-bottom: 2rem;
 	}
 	h1 {
+		font-size: 5rem;
 		font-weight: @fontWeightBold;
+		margin-bottom: 1rem;
 	}
 	h2 {
 		font-size: 2rem;
@@ -225,6 +233,7 @@ section {
 		max-width: 650px;
 		color: @colorWhite;
 		line-height: 2rem;
+		letter-spacing: 2px;
 		font-weight: @fontWeightLight;
 	}
 }
@@ -267,7 +276,7 @@ section {
 //Shadowed section
 .shadow {
 	z-index: 2;
-	.box-shadow(@shadowBig);
+	.box-shadow(@shadowSections);
 }
 
 //Shadow breaker

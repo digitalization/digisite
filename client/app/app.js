@@ -24,6 +24,7 @@ angular.module('DigiSite', [
 	'Common.Layout.coverUp.Directive',
 	'Common.Layout.backgroundImage.Directive',
 	'Common.Layout.backgroundScroll.Directive',
+	'Common.Layout.backgroundOverlay.Directive',
 
 	//App modules
 	'DigiSite.Layout',

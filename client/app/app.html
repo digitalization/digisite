@@ -17,7 +17,7 @@
 <body lang="nl" detect-scrolling>
 <header ng-controller="NavCtrl" ng-class="{'is-scrolling': isScrolling}">
 	<div class="padder">
-		<img class="logo pointer" src="assets/images/site/logo-header.png" ui-sref="home" />
+		<img class="logo pointer" src="assets/images/site/logo-compound.png" ui-sref="home" />
 		<nav>
 			<menu class="no-spacing" ng-cloak>
 				<li ng-repeat="item in Menu.main"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}">{{item.title}}</a></li>
@@ -35,7 +35,7 @@
 		</menu>
 	</nav>
 	<p class="copyright">Copyright &copy; 2015 Digitalization</p>
-	<img src="assets/images/site/logo-footer.png">
+	<img src="assets/images/site/logo.png">
 </footer>
 <script>
 	angular.element(document).ready(function() {
