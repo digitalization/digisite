@@ -26,6 +26,7 @@ angular.module('DigiSite', [
 	'Common.Layout.backgroundScroll.Directive',
 
 	//App modules
+	'DigiSite.Controller',
 	'DigiSite.Layout',
 	'DigiSite.Home',
 	'DigiSite.Projects'
@@ -73,16 +74,4 @@ angular.module('DigiSite', [
  */
 .run(function() {
 
-})
-
-/**
- * Controller
- */
-.controller('AppCtrl', function($scope, Menu, DigiSite) {
-
-	//Set menu service in app-wide scope
-	$scope.Menu = Menu;
-
-	//Set DigiSite service in app-wide scope
-	$scope.DigiSite = DigiSite;
 });

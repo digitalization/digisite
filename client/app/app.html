@@ -2,7 +2,7 @@
 <html ng-controller="AppCtrl">
 <head>
 	<base href="/" />
-	<title>{{DigiSite.name}}</title>
+	<title ng-bind="title">Digitalization</title>
 	<meta charset="utf-8" />
 	<meta name="author" content="Digitalization" />
 	<meta name="description" content="" />
@@ -35,7 +35,7 @@
 			<li ng-repeat="item in Menu.footer"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}">{{item.title}}</a></li>
 		</menu>
 	</nav>
-	<p class="copyright">Copyright &copy; {{DigiSite.copyright}} {{DigiSite.name}}</p>
+	<p class="copyright">Copyright &copy; <span ng-bind="DigiSite.copyright">2014</span> <span ng-bind="DigiSite.name">Digitalization</span></p>
 	<img src="assets/images/site/logo.png">
 </footer>
 <script>
