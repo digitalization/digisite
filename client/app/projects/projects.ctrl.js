@@ -2,13 +2,14 @@
 /**
  * Module definition and dependencies
  */
-angular.module('DigiSite.Home.Controller', [])
+angular.module('DigiSite.Projects.Controller', [])
 
 /**
  * Controller
  */
-.controller('HomeCtrl', function(
+.controller('ProjectsCtrl', function(
 	$scope, $state
 ) {
+
 
 });

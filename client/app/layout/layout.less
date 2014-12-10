@@ -172,7 +172,7 @@ header {
 		}
 	}
 }
-header.is-scrolling {
+header.compact {
 	.box-shadow(@shadowSections);
 	background: fadeout(@colorBgDarkGrey, 5%);
 	.padder {
@@ -207,7 +207,8 @@ section {
 
 //Hero section
 .hero {
-	background: url(../assets/images/site/hero.jpg) center center no-repeat;
+	background-repeat: no-repeat;
+	background-position: center center;
 	background-size: cover;
 	padding: 8rem + @heightHeader 0 8rem;
 	hgroup {
@@ -270,7 +271,23 @@ section {
 
 //Background image
 .bg-image {
-	background-size: 200%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	min-height: 500px;
+}
+
+//Intro section
+.intro {
+	h1 {
+		.text-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
+		color: @colorWhite;
+		letter-spacing: 1px;
+		font-size: 5rem;
+		position: absolute;
+		bottom: 2.5rem;
+		right: 4rem;
+	}
 }
 
 //Shadowed section

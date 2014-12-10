@@ -2,9 +2,9 @@
 <html ng-controller="AppCtrl">
 <head>
 	<base href="/" />
-	<title>Digitalization</title>
+	<title>{{DigiSite.name}}</title>
 	<meta charset="utf-8" />
-	<meta name="author" content="" />
+	<meta name="author" content="Digitalization" />
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<% styles.forEach(function (file) { %>
@@ -16,7 +16,7 @@
 </head>
 
 <body lang="nl" detect-scrolling>
-<header ng-controller="NavCtrl" ng-class="{'is-scrolling': isScrolling}">
+<header ng-controller="NavCtrl" ng-class="{'compact': isCompact}">
 	<div class="padder">
 		<img class="logo pointer" src="assets/images/site/logo-compound.png" ui-sref="home" />
 		<nav>
@@ -35,7 +35,7 @@
 			<li ng-repeat="item in Menu.footer"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}">{{item.title}}</a></li>
 		</menu>
 	</nav>
-	<p class="copyright">Copyright &copy; 2015 Digitalization</p>
+	<p class="copyright">Copyright &copy; {{DigiSite.copyright}} {{DigiSite.name}}</p>
 	<img src="assets/images/site/logo.png">
 </footer>
 <script>

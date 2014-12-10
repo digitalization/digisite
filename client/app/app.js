@@ -28,7 +28,8 @@ angular.module('DigiSite', [
 
 	//App modules
 	'DigiSite.Layout',
-	'DigiSite.Home'
+	'DigiSite.Home',
+	'DigiSite.Projects'
 
 	//App components
 
@@ -38,8 +39,9 @@ angular.module('DigiSite', [
  * App constant
  */
 .constant('DigiSite', {
-	name:		'My Application',
-	version:	'1.0.0',
+	name:		'Digitalization',
+	version:	'7.0.0',
+	copyright:	2015,
 	error:		{
 		SOME_ERROR: 	1,
 		OTHER_ERROR:	2
@@ -77,8 +79,11 @@ angular.module('DigiSite', [
 /**
  * Controller
  */
-.controller('AppCtrl', function($scope, Menu) {
+.controller('AppCtrl', function($scope, Menu, DigiSite) {
 
 	//Set menu service in app-wide scope
 	$scope.Menu = Menu;
+
+	//Set DigiSite service in app-wide scope
+	$scope.DigiSite = DigiSite;
 });

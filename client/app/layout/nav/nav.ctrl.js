@@ -11,12 +11,27 @@ angular.module('DigiSite.Layout.Nav.Controller', [
  */
 .controller('NavCtrl', function($scope) {
 
-	//Detect scrolling
-	$scope.isScrolling = false;
-	$scope.$on('detectedScrolling', function(event, element, offset) {
-		$scope.isScrolling = (offset > 128);
+	//Remember current state
+	var currentState = '';
+
+	//Compact header setting
+	$scope.isCompact = false;
+
+	//Compact header when scrolling on the home page
+	$scope.$on('detectedScrolling', function(event, scrollElement, scrollOffset) {
+		if (currentState == "home") {
+			$scope.isCompact = (scrollOffset > 128);
+		}
 	});
+
+	//Listen for state changes to toggle compact header
 	$scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-		$scope.isScrolling = false;
+		currentState = toState.name;
+		if (currentState == "home") {
+			$scope.isCompact = false;
+		}
+		else {
+			$scope.isCompact = true;
+		}
 	});
 });
