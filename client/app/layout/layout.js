@@ -27,4 +27,9 @@ angular.module('DigiSite.Layout', [
 			$rootScope.setWindowSize();
 		});
 	});
+
+	//Scroll to top on state changes
+	$rootScope.$on('$stateChangeSuccess', function(event) {
+		$window.scrollTo(0, 0);
+	});
 });

@@ -9,7 +9,7 @@ angular.module('DigiSite.Layout.Nav.Controller', [
 /**
  * Controller
  */
-.controller('NavCtrl', function($scope) {
+.controller('NavCtrl', function($window, $scope) {
 
 	//Remember current state
 	var currentState = '';
@@ -19,7 +19,7 @@ angular.module('DigiSite.Layout.Nav.Controller', [
 
 	//Compact header when scrolling on the home page
 	$scope.$on('detectedScrolling', function(event, scrollElement, scrollOffset) {
-		if (currentState == "home") {
+		if (currentState == 'home') {
 			$scope.isCompact = (scrollOffset > 128);
 		}
 	});
@@ -27,7 +27,7 @@ angular.module('DigiSite.Layout.Nav.Controller', [
 	//Listen for state changes to toggle compact header
 	$scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 		currentState = toState.name;
-		if (currentState == "home") {
+		if (currentState == 'home') {
 			$scope.isCompact = false;
 		}
 		else {

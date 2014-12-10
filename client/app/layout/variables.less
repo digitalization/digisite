@@ -41,11 +41,12 @@
 /* Basic colors */
 @colorBlack: #000;
 @colorWhite: #fff;
+@colorAccent: #2078be;
 
 /* Text colors */
 @colorText: #333;
 @colorTextFaded: #ccc;
-@colorTextLink: #2078be;
+@colorTextLink: @colorAccent;
 
 /* Background colors */
 @colorBgBody: #f5f5f5;
@@ -53,12 +54,13 @@
 @colorBgDarkGrey: rgb(50,55,60);
 @colorBgLightBlue: #84b4db;
 @colorBgLightGrey: #ddd;
-@colorBgHeader: #2078be;
-@colorBgButton: #2078be;
-@colorBgButtonPrimary: #2078be;
+@colorBgHeader: @colorAccent;
+@colorBgButton: @colorAccent;
+@colorBgButtonPrimary: @colorAccent;
 
 /* Shadows */
-@shadowSections: 0 0 40px rgba(0, 0, 0, 0.6);
+@shadowSections: 0 0 40px rgba(0,0,0,0.6);
+@shadowImages: 10px 10px 30px rgba(0,0,0,0.3);
 
 /*******************************************************************************************************************************
  * Layout dimensions

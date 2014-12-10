@@ -1,0 +1,53 @@
+
+project {
+	position: relative;
+	display: block;
+	float: left;
+	width: 33%;
+	background-size: cover;
+	cursor: pointer;
+	.cover {
+		.transition(opacity 0.2s linear);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: @colorAccent;
+		.info {
+			display: inline-block;
+			vertical-align: middle;
+			width: 99%;
+			padding: 0 1rem;
+		}
+	}
+	.cover:before {
+		content: '';
+		display: inline-block;
+		height: 100%;
+		width: 0;
+		vertical-align: middle;
+	}
+	.cover.hidden {
+		opacity: 0;
+	}
+	h2, p {
+		text-align: center;
+		color: @colorWhite;
+	}
+	p {
+		font-size: @fontSizeSmall;
+	}
+	h2 {
+		font-weight: @fontWeightBold;
+		margin-bottom: 0;
+	}
+}
+project:nth-child(3n+2) {
+	width: 33%;
+}
+project:before {
+	content: "";
+	display: block;
+	padding-top: 75%;
+}

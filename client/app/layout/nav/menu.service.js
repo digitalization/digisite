@@ -8,11 +8,7 @@ angular.module('DigiSite.Layout.Nav.Menu.Service', [])
  * Factory definition
  */
 .factory('Menu', function() {
-
-	/**
-	 * Class object
-	 */
-	var Menu = {
+	return {
 
 		//Main menu
 		main: [
@@ -34,7 +30,4 @@ angular.module('DigiSite.Layout.Nav.Menu.Service', [])
 			{sref: "sitemap", title: "Sitemap"}
 		]
 	};
-
-	//Return
-	return Menu;
 });

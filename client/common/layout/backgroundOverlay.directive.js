@@ -25,8 +25,7 @@ angular.module('Common.Layout.backgroundOverlay.Directive', [])
 
 			//Apply higher z index to element children
 			angular.element(element[0].children).css({
-				zIndex: 1,
-				position: 'relative'
+				zIndex: 1
 			});
 
 			//Apply some CSS to parent element and append overlay element

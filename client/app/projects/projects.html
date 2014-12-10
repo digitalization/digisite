@@ -1,11 +1,22 @@
 <!-- projects/projects.html -->
-<section class="intro bg-image" cover-up="1"  background-image="assets/images/large/20140122-Machines-008.jpg">
+<section class="intro overlay bg-image" cover-up="1"  background-image="assets/images/large/20140122-Machines-008.jpg">
+	<h1>Projecten</h1>
+</section>
+<section class="shadow less-padding">
 	<article>
-		<h1>Projecten</h1>
+		<h1>Always excited to try something new... <a class="button" ui-sref="">Tell me more!</a></h1>
+		<p>Have a look at some of the projects we've worked on.</p>
 	</article>
 </section>
-<section class="shadow">
-	<article></article>
+<section class="no-padding">
+	<project ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
+		<div class="cover" ng-class="{hidden: !Project.focus}">
+			<div class="info">
+				<h2>{{Project.name}}</h2>
+				<p>{{Project.tagline}}</p>
+			</div>
+		</div>
+	</project>
 </section>
 <section class="blue no-bottom shadow">
 	<article class="with-aside wider">

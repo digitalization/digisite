@@ -269,24 +269,36 @@ section {
 	padding-bottom: 0;
 }
 
+//No padding at all
+.no-padding {
+	padding: 0;
+}
+
+//Less vertical padding
+.less-padding {
+	padding: 2rem 6rem;
+}
+
 //Background image
 .bg-image {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	min-height: 500px;
+	min-height: 32rem;
 }
 
 //Intro section
 .intro {
+	height: 32rem;
+	padding: 23rem 6rem 0;
 	h1 {
+		text-align: right;
+		position: relative;
+		margin: 0;
 		.text-shadow(1px 1px 3px rgba(0, 0, 0, 0.5));
 		color: @colorWhite;
 		letter-spacing: 1px;
 		font-size: 5rem;
-		position: absolute;
-		bottom: 2.5rem;
-		right: 4rem;
 	}
 }
 
@@ -294,6 +306,19 @@ section {
 .shadow {
 	z-index: 2;
 	.box-shadow(@shadowSections);
+}
+
+//Opacity overlay section
+.overlay::before {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: -5;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
 }
 
 //Shadow breaker
@@ -311,7 +336,7 @@ section {
 
 //Blue box aside
 .blue-box {
-	background: @colorTextLink;
+	background: @colorAccent;
 	color: @colorWhite;
 	.box-shadow(-15px 15px 20px rgba(0,0,0,0.15));
 	padding: @lineHeight @lineHeight;
@@ -325,6 +350,7 @@ section {
 
 //Article/aside structure
 article {
+	position: relative;
 	width: 100%;
 }
 article.right {
@@ -345,7 +371,7 @@ aside {
 	float: right;
 	position: relative;
 	img {
-		.box-shadow(10px 10px 30px rgba(0,0,0,0.3));
+		.box-shadow(@shadowImages);
 	}
 	img + img {
 		margin-top: @lineHeight;
@@ -475,7 +501,7 @@ technical {
 	position: absolute;
 	right: 10%;
 	top: 2rem;
-	color: @colorTextLink;
+	color: @colorAccent;
 }
 .note, .note::after {
 	box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.4);
@@ -527,4 +553,22 @@ technical {
  	.note:first-child {
  		margin-right:			9%;
  	}
+}
+
+/***********************************************************************************************
+ * State navigation
+ ***/
+
+/* Animations between states */
+.state.ng-enter, .state.ng-leave {
+	.transition(all .5s ease-in-out);
+}
+.state.ng-enter {
+	opacity: 0;
+}
+.state.ng-enter-active, .state.ng-leave	{
+	opacity: 1;
+}
+.state.ng-leave-active {
+	opacity: 0;
 }
