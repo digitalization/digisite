@@ -25,11 +25,14 @@ angular.module('DigiSite', [
 	'Common.Layout.backgroundImage.Directive',
 	'Common.Layout.backgroundScroll.Directive',
 
-	//App modules
+	//App controller
 	'DigiSite.Controller',
+
+	//App modules
 	'DigiSite.Layout',
 	'DigiSite.Home',
-	'DigiSite.Projects'
+	'DigiSite.Projects',
+	'DigiSite.Vacancies'
 
 	//App components
 

@@ -3,11 +3,11 @@ project {
 	position: relative;
 	display: block;
 	float: left;
-	width: 33%;
+	width: 33.33333%;
 	background-size: cover;
 	cursor: pointer;
 	.cover {
-		.transition(opacity 0.2s linear);
+		.transition(opacity 0.3s linear);
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -17,8 +17,8 @@ project {
 		.info {
 			display: inline-block;
 			vertical-align: middle;
-			width: 99%;
-			padding: 0 1rem;
+			width: 100%;
+			padding: 0 1rem 0 2rem; /* Extra padding on the left to compensate negative margin of :before */
 		}
 	}
 	.cover:before {
@@ -27,8 +27,12 @@ project {
 		height: 100%;
 		width: 0;
 		vertical-align: middle;
+		margin-right: -1rem; /* To make sure the elements fit on one line */
 	}
-	.cover.hidden {
+	.cover.ng-show, .cover.ng-hide.ng-hide.active {
+		opacity: 1;
+	}
+	.cover.ng-hide, .cover.ng-show.ng-show.active {
 		opacity: 0;
 	}
 	h2, p {
@@ -44,7 +48,7 @@ project {
 	}
 }
 project:nth-child(3n+2) {
-	width: 33%;
+
 }
 project:before {
 	content: "";
