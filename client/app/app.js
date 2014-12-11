@@ -31,7 +31,6 @@ angular.module('DigiSite', [
 	//App modules
 	'DigiSite.Layout',
 	'DigiSite.Home',
-	'DigiSite.Projects',
 	'DigiSite.Vacancies'
 
 	//App components

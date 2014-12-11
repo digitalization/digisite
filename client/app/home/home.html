@@ -5,7 +5,7 @@
 			<h1>Software <i>re</i>invented.</h1>
 			<h2>Intelligent design, quality production.</h2>
 		</hgroup>
-		<p>Specialist in de ontwikkeling en integratie van hoogwaardige en complexe software systemen. Industri&euml;le automatisering, technische applicaties, financi&euml;le software, web based apps &amp; cloud computing.</p>
+		<p>Specialist in de ontwikkeling en integratie van hoogwaardige high-tech software systemen. Industri&euml;le automatisering, embedded software, technische &amp; financi&euml;le toepassingen, web based &amp; cloud computing.</p>
 	</article>
 </section>
 <section class="shadow">
@@ -20,6 +20,21 @@
 	</aside>
 </section>
 <section class="shadow-breaker"></section>
+<section class="no-padding">
+	<project ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
+		<div class="cover" ng-show="Project.focus">
+			<div class="info">
+				<h2>{{Project.name}}</h2>
+				<p>{{Project.tagline}}</p>
+			</div>
+		</div>
+	</project>
+</section>
+<section class="shadow less-padding">
+	<article>
+		<h2>Always excited to try something new... <a class="button" ui-sref="contact">Tell me more!</a></h2>
+	</article>
+</section>
 <section class="gray shadow">
 	<article class="right widest with-aside">
 		<h2>Industri&euml;le Automatisering</h2>
