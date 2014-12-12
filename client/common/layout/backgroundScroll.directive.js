@@ -1,9 +1,12 @@
+/**
+ * @version 1.0.2
+ */
 
 /**
  * Module definition and dependencies
  */
 angular.module('Common.Layout.backgroundScroll.Directive', [
-	'Common.Layout.detectScrolling.Directive'
+	'Common.Events.detectScrolling.Directive'
 ])
 
 /**

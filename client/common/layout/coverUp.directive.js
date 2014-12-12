@@ -1,9 +1,12 @@
+/**
+ * @version 1.0.1
+ */
 
 /**
  * Module definition and dependencies
  */
 angular.module('Common.Layout.coverUp.Directive', [
-	'Common.Layout.detectScrolling.Directive'
+	'Common.Events.detectScrolling.Directive'
 ])
 
 /**

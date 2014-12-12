@@ -1,3 +1,6 @@
+/**
+ * @version 1.0.5
+ */
 
 /**
  * Module definition and dependencies
@@ -16,22 +19,23 @@ angular.module('Common.Utils.StringUtils.Service', [])
 
 		/**
 		 * Convert a string to lowercase with dashes instead of spaces
-		 *
-		 * @param	string	Input string
-		 * @param	string	Converted string
 		 */
 		dasherize: function(s) {
-			return s.trim().replace(/([A-Z])/g,"$1").replace(/[-_\s]+/g,"-").toLowerCase();
+			return String(s).trim().replace(/([A-Z])/g,"$1").replace(/[-_\s]+/g,"-").toLowerCase();
 		},
 
 		/**
 		 * Convert special characters to HTML entities
-		 *
-		 * @param	string	Input string
-		 * @param	string	Converted string
 		 */
 		htmlEntities: function(s) {
-			return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+			return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+		},
+
+		/**
+		 * Convert newlines to <br />
+		 */
+		nl2br: function(s) {
+			return String(s).replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br />$2');
 		}
 	};
 

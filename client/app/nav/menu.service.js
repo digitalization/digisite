@@ -2,7 +2,7 @@
 /**
  * Module definition and dependencies
  */
-angular.module('DigiSite.Layout.Nav.Menu.Service', [])
+angular.module('DigiSite.Nav.Menu.Service', [])
 
 /**
  * Factory definition
