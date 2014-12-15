@@ -32,7 +32,10 @@ angular.module('DigiSite', [
 	'DigiSite.Layout',
 	'DigiSite.Home',
 	'DigiSite.Projects',
-	'DigiSite.Vacancies'
+	'DigiSite.Is',
+	'DigiSite.Embedded',
+	'DigiSite.Webbased',
+	'DigiSite.Technical'
 
 	//App components
 
