@@ -2,14 +2,14 @@
 /**
  * Module definition and dependencies
  */
-angular.module('DigiSite.Layout.Nav.Controller', [
-	'DigiSite.Layout.Nav.Menu.Service'
+angular.module('DigiSite.Layout.Header.Controller', [
+	'Common.Events.detectScrolling.Directive'
 ])
 
 /**
  * Controller
  */
-.controller('NavCtrl', function($window, $scope) {
+.controller('HeaderCtrl', function($window, $scope) {
 
 	//Remember current state
 	var currentState = '';

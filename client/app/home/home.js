@@ -3,7 +3,8 @@
  * Module definition and dependencies
  */
 angular.module('DigiSite.Home', [
-	'DigiSite.Home.Controller'
+	'DigiSite.Home.Controller',
+	'DigiSite.Shared.Projects.Service'
 ])
 
 /**
