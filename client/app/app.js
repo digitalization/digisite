@@ -21,25 +21,19 @@ angular.module('DigiSite', [
 	//Common services and directives
 	'Common.Utils.StringUtils.Service',
 	'Common.Utils.StorageUtils.Service',
-	'Common.Layout.detectScrolling.Directive',
-	'Common.Layout.coverUp.Directive',
-	'Common.Layout.backgroundImage.Directive',
-	'Common.Layout.backgroundScroll.Directive',
 
-	//App controller
+	//Core modules
 	'DigiSite.Controller',
-
-	//App modules
 	'DigiSite.Layout',
+	'DigiSite.Nav',
+
+	//Other modules
 	'DigiSite.Home',
-	'DigiSite.Projects',
+	'DigiSite.Vacancies',
 	'DigiSite.Is',
 	'DigiSite.Embedded',
 	'DigiSite.Webbased',
 	'DigiSite.Technical'
-
-	//App components
-
 ])
 
 /**
