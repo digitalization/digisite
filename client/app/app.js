@@ -30,7 +30,7 @@ angular.module('DigiSite', [
 	//Other modules
 	'DigiSite.Home',
 	'DigiSite.Vacancies',
-	'DigiSite.Is',
+	'DigiSite.Industrial',
 	'DigiSite.Embedded',
 	'DigiSite.Webbased',
 	'DigiSite.Technical'
