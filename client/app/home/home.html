@@ -1,6 +1,5 @@
 <!-- home/home.html -->
 <section class="hero" cover-up="1" background-image="assets/images/site/hero.jpg">
-	<a name="software" id="software"></a>
 	<article>
 		<hgroup>
 			<h1>Software <i>re</i>invented.</h1>
@@ -9,7 +8,7 @@
 		<!--<p>Specialist in de ontwikkeling en integratie van hoogwaardige high-tech software systemen. Industri&euml;le automatisering, embedded software en technische applicaties.</p>-->
 	</article>
 </section>
-<section class="shadow">
+<section class="shadow" id="software">
 	<article class="columns">
 		<div class="column third">
 			<i class="icon-cogs"></i>
@@ -30,10 +29,9 @@
 			<p><a ui-sref="technical" title="Technical applications">Find out more</a></p>
 		</div>
 	</article>
-	<a name="projects" id="projects"></a>
 </section>
 <section class="shadow-breaker"></section>
-<section class="no-padding projects">
+<section class="no-padding projects" id="projects">
 	<project ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
 		<div class="cover" ng-show="Project.focus">
 			<div class="info">
@@ -84,8 +82,14 @@
 		<span class="linebreak"></span>
 	</article>
 </section>
-<section class="blue no-bottom shadow flex">
-	<a name="contact" id="contact"></a>
+<section class="shadow" id="company">
+	<article class="with-aside">
+		<h2>About us</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies neque ac varius facilisis. Integer varius justo sed pellentesque mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies neque ac varius facilisis. Integer varius justo sed pellentesque mollis.</p>
+	</article>
+	<aside></aside>
+</section>
+<section class="blue no-bottom shadow flex" id="contact">
 	<article class="with-aside wider">
 		<h2>Get in touch</h2>
 		<p>Want to know more or get in touch with us? Fill out the form below and we'll get back to you!</p>
@@ -105,7 +109,6 @@
 				<p class="message" ng-message="required">Please fill out your question or comments.</p>
 			</span>
 			<button class="button primary" type="submit">Submit</button>
-			<br/><br/><br/>
 		</form>
 	</article>
 	<aside class="blue-box">

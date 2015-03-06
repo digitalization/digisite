@@ -13,9 +13,24 @@ angular.module('DigiSite.Layout', [
 /**
  * Run logic
  */
-.run(function($rootScope, $window) {
+.run(function($rootScope, $window, $timeout, smoothScroll) {
 
-	//Window size property setter
+	/**
+	 * Helper to scroll to a particular section
+	 */
+	$rootScope.scrollTo = function(section) {
+		$timeout(function() {
+			var offset = document.getElementsByTagName('header')[0].clientHeight,
+				element = document.getElementById(section);
+			if (element) {
+				smoothScroll(element, {offset: offset});
+			}
+		}, 10);
+	};
+
+	/**
+	 * Window size property setter
+	 */
 	$rootScope.setWindowSize = function() {
 		$rootScope.windowHeight	= $window.innerHeight;
 		$rootScope.windowWidth	= $window.innerWidth;
@@ -33,8 +48,12 @@ angular.module('DigiSite.Layout', [
 
 	//Scroll to top on state changes
 	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+
+		//Get to and from parent state names
 		var toName = toState.name.split('.')[0],
-			fromName = formState.name.split('.')[0];
+			fromName = fromState.name.split('.')[0];
+
+		//Different parent states? Scroll to top
 		if (toName != fromName) {
 			$window.scrollTo(0, 0);
 		}

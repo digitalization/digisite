@@ -3,5 +3,8 @@
 	<h1>Vacancies</h1>
 </section>
 <section>
-
+	<article ng-repeat="Vacancy in Vacancies">
+		<h2>{{Vacancy.name}}</h2>
+		<p>{{Vacancy.intro}}</p>
+	</article>
 </section>

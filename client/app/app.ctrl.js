@@ -17,4 +17,6 @@ angular.module('DigiSite.Controller', [])
 
 	//Set title
 	$scope.title = DigiSite.name;
+
+
 });
