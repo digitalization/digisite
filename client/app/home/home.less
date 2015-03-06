@@ -1,5 +1,45 @@
 
-/***********************************************************************************************
+/*****************************************************************************
+ * Columns
+ ***/
+
+.columns {
+	display: flex;
+}
+.column {
+	flex: 1;
+	i {
+		font-size: 3rem;
+	}
+	i, h2 {
+		text-align: center;
+	}
+	p {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+.logos {
+	display: flex;
+	flex-wrap: wrap;
+	div {
+		height: 200px;
+		width: 33%;
+		text-align: center;
+	}
+	div:before {
+		content: ' ';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	img {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+/*****************************************************************************
  * Projects
  ***/
 

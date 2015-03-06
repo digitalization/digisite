@@ -174,7 +174,7 @@ header {
 }
 header.compact {
 	.box-shadow(@shadowSections);
-	background: fadeout(@colorBgDarkGrey, 5%);
+	background: fadeout(@colorBgHeader, 5%);
 	.padder {
 		border-bottom: 0;
 		height: @heightHeaderScrolling;
@@ -242,6 +242,15 @@ section {
 //Section after hero gets a higher z-index so we can slide over
 .hero + section {
 	z-index: 2;
+}
+
+//Dark section
+.dark {
+	background: @colorBgDarkGrey;
+	color: @colorWhite;
+	h1, h2, h3, h4, h5, h6 {
+		color: @colorWhite;
+	}
 }
 
 //Gray section
@@ -399,7 +408,7 @@ article.right + aside {
 
 //Footer
 footer {
-	background:	@colorBgDarkGrey;
+	background:	@colorBgHeader;
 	height: 9rem;
 	z-index: 101;
 	position: relative;
