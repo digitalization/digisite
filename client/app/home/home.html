@@ -40,7 +40,7 @@
 </section>
 <section class="shadow less-padding dark">
 	<article>
-		<h2>Always excited to try something new... <a class="button" ui-sref="contact">Tell me more!</a></h2>
+		<h2>We did it before, find out how we can help you <a class="button" ui-sref="contact">Tell me more!</a></h2>
 	</article>
 </section>
 <section class="shadow less-padding">
@@ -61,8 +61,8 @@
 <section class="notes overlay" background-scroll="assets/images/large/20140122-Machines-007.jpg" scroll-x="0.2" scroll-y="0.5">
 	<article>
 		<div class="note">
-			<h4 class="icon-gauge">Fast results</h4>
-			<p>Faster project throughput times due to usage of hardware simulators.</p>
+			<h4 class="icon-gauge">Faster results</h4>
+			<p>Agile techniques and hardware simulation to allow parallel development.</p>
 			<p><a ui-sref="hardware-simulatie">Find out more</a></p>
 		</div>
 		<div class="note">
@@ -73,15 +73,30 @@
 		<span class="linebreak"></span>
 	</article>
 </section>
-<section class="blue no-bottom shadow">
+<section class="blue no-bottom shadow flex">
 	<article class="with-aside wider">
 		<h2>Get in touch</h2>
-
-
+		<form name="Form" ng-submit="submitForm(contact)"  novalidate ng-model-options="{updateOn: 'default blur', debounce: {default: 500, blur: 0}}">
+			<input type="text" name="name" id="name" ng-model="contact.name" required placeholder="name" />
+			<span class="error" ng-show="Form.$submitted || Form.name.$dirty" ng-messages="Form.name.$error">
+				<p class="message" ng-message="required">Please fill out your name.</p>
+			</span>
+			<input type="email" name="email" id="email" ng-model="contact.email" required placeholder="e-mail address" />
+			<span class="error" ng-show="Form.$submitted || Form.email.$dirty" ng-messages="Form.email.$error">
+				<p class="message" ng-message="required">Please fill out your e-mail address so we can get in touch with you.</p>
+				<p class="message" ng-message="email">Please enter a valid e-mail address.</p>
+			</span>
+			<input type="phone" name="phone" id="phone" ng-model="contact.phone" placeholder="phone number (optional)" />
+			<textarea name="question" id="question" ng-model="contact.question" required placeholder="your question or comments"></textarea>
+			<span class="error" ng-show="Form.$submitted || Form.question.$dirty" ng-messages="Form.question.$error">
+				<p class="message" ng-message="required">Please fill out your question or comments.</p>
+			</span>
+			<button class="button primary" type="submit">Submit</button>
+			<br/><br/><br/>
+		</form>
 	</article>
 	<aside class="blue-box">
 		<div>
-
 			<h6>Netherlands office</h6>
 			<p>Rotterdamseweg 183 c<br />2629 HD Delft</p>
 			<p>+31 (0)15 268 25 69<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>

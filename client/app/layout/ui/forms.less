@@ -6,6 +6,7 @@
 //Form
 form {
 	margin-bottom: @lineHeight;
+	width: 90%;
 }
 input, select, textarea {
 	font-family: @fontFamily;
@@ -42,6 +43,7 @@ form select, form textarea {
 	color: @colorText;
 	border: 0;
 	.box();
+	padding: 1rem 1.5rem;
 }
 form textarea {
 	height: @lineHeight*5;
@@ -55,68 +57,16 @@ form input:not([type='submit']):not([type='file']):not([type='checkbox']):not([t
 	margin: 0;
 }
 
-/**********************************************************************************
- * Checkboxes and radio's
+/**
+ * messages underneath fields
  */
-
-/* Checkboxes/radio inputs */
-input[type='checkbox'], input[type='radio'] {
-	float:					left;
-	opacity:				0;
-	z-index:				3;
-	margin:					0;
-	width:					20px; /* Space for the faux checkbox */
-}
-input[type='checkbox'] + label, input[type='radio'] + label {
-	width:					auto;
-	float:					left;
-	clear:					none;
-	margin-right:			1rem;
-	height:					@lineHeight;
-	cursor:					pointer;
-}
-input[type='checkbox'] + label::before, input[type='radio'] + label::before {
-	display:				block;
-	position:				absolute;
-	content:				'';
-	border:					1px solid #ddd;
-	border-radius:			2px;
-	background: 			#fff;
-	height:					14px;
-	width:					14px;
-	margin:					3px 0 0 -20px;
-	transition:				border 0.2s linear, box-shadow 0.2s linear;
-}
-input[type='radio'] + label::before {
-	border-radius:			50%;
-}
-input[type='checkbox']:checked + label::after, input[type='radio']:checked + label::after {
-	display:				block;
-	position:				absolute;
-	content:				'\e819';
-	margin:					-31px 0 0 -18px;
-	font-size:				0.75rem;
-	color:					#555;
-	font-style:				normal;
-	font-variant: 			normal;
-	text-transform: 		none;
-	text-align: 			center;
-	text-shadow:			none;
-	.font-smoothing(antialiased);
-}
-input[type='radio']:checked + label::after {
-	content:				'\25cf';
-	font-size: 				20px;
-	margin: 				-24px 0 0 -19px;
-}
-
-/* Checkbox/radio lists */
-.list {
-	overflow: auto;
-}
-.list input[type='checkbox'], .list input[type='radio'] {
-	clear: both;
-}
-.list input[type='checkbox'] + label, .list input[type='radio'] + label {
-	margin-right: 0;
+form {
+	.message {
+		font-size: @fontSizeSmall;
+		font-style: @fontStyleItalic;
+		margin-top: -1rem;
+	}
+	span .message {
+		margin-bottom: @lineHeight;
+	}
 }

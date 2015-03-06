@@ -106,6 +106,9 @@ hr {
 .no-spacing {
 	font-size: 0;
 }
+.flex {
+	display: flex;
+}
 
 //Font styles
 b, strong, .bold {
@@ -262,7 +265,7 @@ section {
 .blue {
 	color: @colorWhite;
 	background-color: @colorBgLightBlue;
-	min-height:	450px;
+	min-height: 450px;
 	background-image: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%,rgba(255,255,255,0.1) 30%,rgba(255,255,255,0) 100%); /* FF3.6+ */
 	background-image: -webkit-linear-gradient(110deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%, rgba(255,255,255,0.1) 30%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
 	background-image: -o-linear-gradient(110deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%, rgba(255,255,255,0.1) 30%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
@@ -370,10 +373,11 @@ article.right {
 	float: left;
 }
 .wider {
-	width: 57.5%
+	width: 57.5%;
+	flex-grow: 2;
 }
 .widest {
-	width: 65%
+	width: 65%;
 }
 aside {
 	width: 40%;

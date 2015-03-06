@@ -9,6 +9,7 @@ angular.module('DigiSite', [
 	'ngTouch',
 	'ngCookies',
 	'ngSanitize',
+	'ngMessages',
 
 	//3rd party
 	'ui.router',

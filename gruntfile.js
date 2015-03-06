@@ -91,6 +91,7 @@ module.exports = function(grunt) {
 				'vendor/angular/plugins/angular-cookies.js',
 				'vendor/angular/plugins/angular-sanitize.js',
 				'vendor/angular/plugins/angular-resource.js',
+				'vendor/angular/plugins/angular-messages.js',
 				'vendor/angular/plugins/angular-ui-router.js'
 			],
 			less: [],
