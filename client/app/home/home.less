@@ -18,6 +18,9 @@
 		width: 80%;
 		margin: 0 auto @lineHeight;
 	}
+	p:last-child {
+		margin-bottom: 0;
+	}
 }
 .logos {
 	display: flex;
@@ -53,6 +56,7 @@ project {
 	width: 33.33333%;
 	background-size: cover;
 	cursor: pointer;
+	-webkit-filter: grayscale(10%);
 	.cover {
 		.transition(opacity 0.3s linear);
 		position: absolute;
@@ -60,7 +64,7 @@ project {
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background: fadeout(@colorAccent, 15%);
+		background: fadeout(@colorAccent, 35%);
 		.info {
 			display: inline-block;
 			vertical-align: middle;
@@ -93,13 +97,15 @@ project {
 		font-weight: @fontWeightBold;
 		margin-bottom: 0;
 	}
-}
-project:nth-child(3n+2) {
+	&:hover {
+		//-webkit-filter: grayscale(80%);
+	}
+	&:nth-child(3n+2) {
 
-}
-project:before {
-	content: "";
-	display: block;
-	padding-top: 75%;
-	background: fadeout(@colorAccent, 90%);
+	}
+	&:before {
+		content: "";
+		display: block;
+		padding-top: 75%;
+	}
 }

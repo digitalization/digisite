@@ -31,7 +31,7 @@
 <footer>
 	<nav>
 		<menu class="no-spacing" ng-cloak>
-			<li ng-repeat="item in Menu.footer"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}">{{item.title}}</a></li>
+			<li ng-repeat="item in Menu.footer"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}" ng-click="item.section?scrollTo(item.section):''">{{item.title}}</a></li>
 		</menu>
 	</nav>
 	<p class="copyright">Copyright &copy; <span ng-bind="DigiSite.copyright">2015</span> <span ng-bind="DigiSite.name">Digitalization</span></p>
