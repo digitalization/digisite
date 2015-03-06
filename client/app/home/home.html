@@ -3,73 +3,89 @@
 	<article>
 		<hgroup>
 			<h1>Software <i>re</i>invented.</h1>
-			<h2>Intelligent design, quality production.</h2>
+			<h2>We specialize in developing technical software.</h2>
 		</hgroup>
-		<p>Specialist in de ontwikkeling en integratie van hoogwaardige en complexe software systemen. Industri&euml;le automatisering, technische applicaties, financi&euml;le software, web based apps &amp; cloud computing.</p>
+		<!--<p>Specialist in de ontwikkeling en integratie van hoogwaardige high-tech software systemen. Industri&euml;le automatisering, embedded software en technische applicaties.</p>-->
 	</article>
 </section>
 <section class="shadow">
-	<article class="with-aside">
-		<h2>Industri&euml;le Automatisering</h2>
-		<p>
-			SCADA (Supervisory Control and Data Acquisition) en PLC (Programmable Logic Controller) programmeurs vormen de schakel tussen concept en werkelijkheid. Onze HBO/WO opgeleide programmeurs brengen een extra hoog denkniveau mee in het ontwikkeltraject, hetgeen leidt tot snellere en kwalitatief hogere resultaten.
-		</p>
+	<article class="columns">
+		<div class="column third">
+			<i class="icon-cogs"></i>
+			<h2>Industrial<br />Automation</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies neque ac varius facilisis. Integer varius justo sed pellentesque mollis.</p>
+		</div>
+		<div class="column third">
+			<i class="icon-plug"></i>
+			<h2>Embedded<br />Software</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies neque ac varius facilisis. Integer varius justo sed pellentesque mollis.</p>
+		</div>
+		<div class="column third">
+			<i class="icon-database"></i>
+			<h2>Technical<br />Applications</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies neque ac varius facilisis. Integer varius justo sed pellentesque mollis.</p>
+		</div>
 	</article>
-	<aside>
-		<img src="assets/images/small/20131212-Machines-002.jpg" />
-	</aside>
 </section>
 <section class="shadow-breaker"></section>
-<section class="gray shadow">
-	<article class="right widest with-aside">
-		<h2>Industri&euml;le Automatisering</h2>
-		<p>
-			SCADA (Supervisory Control and Data Acquisition) en PLC (Programmable Logic Controller) programmeurs vormen de schakel tussen concept en werkelijkheid. Onze HBO/WO opgeleide programmeurs brengen een extra hoog denkniveau mee in het ontwikkeltraject, hetgeen leidt tot snellere en kwalitatief hogere resultaten.
-		</p>
+<section class="no-padding">
+	<project ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
+		<div class="cover" ng-show="Project.focus">
+			<div class="info">
+				<h2>{{Project.name}}</h2>
+				<p>{{Project.tagline}}</p>
+			</div>
+		</div>
+	</project>
+</section>
+<section class="shadow less-padding dark">
+	<article>
+		<h2>Always excited to try something new... <a class="button" ui-sref="contact">Tell me more!</a></h2>
 	</article>
-	<aside>
-		<img src="assets/images/small/20131212-Machines-003.jpg" />
-		<img src="assets/images/small/20131212-Machines-004.jpg" />
-	</aside>
+</section>
+<section class="shadow">
+	<article>
+		<article class="logos">
+			<div><img src="assets/images/logos/tno.png" /></div>
+			<div><img src="assets/images/logos/eurofins.png" /></div>
+			<div><img src="assets/images/logos/tecnic.png" /></div>
+			<div><img src="assets/images/logos/travelport.png" /></div>
+			<div><img src="assets/images/logos/aqualab.png" /></div>
+			<div><img src="assets/images/logos/travelfusion.png" /></div>
+			<div><img src="assets/images/logos/neurocenters.png" /></div>
+			<div><img src="assets/images/logos/sdna.png" /></div>
+		</article>
+	</article>
 </section>
 <section class="notes overlay" background-scroll="assets/images/large/20140122-Machines-007.jpg" scroll-x="0.2" scroll-y="0.5">
 	<article>
 		<div class="note">
-			<h4 class="icon-gauge">Snel resultaat</h4>
-			<p>40% kortere project doorlooptijd dankzij hardware simulatie en paralelle ontwikkeling.</p>
-			<p><a ui-sref="hardware-simulatie">Lees verder</a></p>
+			<h4 class="icon-gauge">Fast results</h4>
+			<p>Faster project throughput times due to usage of hardware simulators.</p>
+			<p><a ui-sref="hardware-simulatie">Find out more</a></p>
 		</div>
 		<div class="note">
-			<h4 class="icon-megaphone">Werken bij ons</h4>
-			<p>Wil je ons team versterken als ontwikkelaar van geile ende vrolijke ende uitdagende software?</p>
-			<p><a ui-sref="vacancies">Lees verder</a></p>
+			<h4 class="icon-megaphone">Join our team</h4>
+			<p>Interested in joining our team as a software developer?</p>
+			<p><a ui-sref="vacancies">Find out more</a></p>
 		</div>
 		<span class="linebreak"></span>
 	</article>
 </section>
 <section class="blue no-bottom shadow">
 	<article class="with-aside wider">
-		<h2>SCADA &amp; PLC programmeurs</h2>
-		<p>
-			SCADA (Supervisory Control and Data Acquisition) en PLC (Programmable Logic Controller) programmeurs vormen de schakel tussen concept en werkelijkheid. Onze HBO/WO opgeleide programmeurs brengen een extra hoog denkniveau mee in het ontwikkeltraject, hetgeen leidt tot snellere en kwalitatief hogere resultaten. Wij hebben ervaring met de volgende systemen/programmeertalen:
-		</p>
-		<technical>
-			<ul>
-				<li>CodeSys</li>
-				<li>Python</li>
-				<li>Step7 (s7) / WinCC Flex</li>
-			</ul>
-		</technical>
-		<p><a class="button" ui-sref="scada-plc-programmeurs">Lees verder</a></p>
+		<h2>Get in touch</h2>
+
+
 	</article>
 	<aside class="blue-box">
 		<div>
-			<h3>Contact</h3>
+
 			<h6>Netherlands office</h6>
 			<p>Rotterdamseweg 183 c<br />2629 HD Delft</p>
 			<p>+31 (0)15 268 25 69<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>
 			<h6>New Zealand office</h6>
-			<p>Based in Wellington</p>
+			<p>113 Tory Street<br />Wellington</p>
 			<p>+64 (0)22 100 1067<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>
 			<p class="no-mobile">&nbsp;</p>
 			<span class="icon-paper-plane large-icon"></span>

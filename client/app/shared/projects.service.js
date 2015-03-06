@@ -2,7 +2,7 @@
 /**
  * Module definition and dependencies
  */
-angular.module('DigiSite.Projects.Service', [])
+angular.module('DigiSite.Shared.Projects.Service', [])
 
 /**
  * Factory definition

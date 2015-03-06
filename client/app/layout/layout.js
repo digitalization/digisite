@@ -3,8 +3,11 @@
  * Module definition and dependencies
  */
 angular.module('DigiSite.Layout', [
-	'DigiSite.Layout.Nav',
-	'DigiSite.Layout.Technical.Directive'
+	'DigiSite.Layout.Header',
+	'DigiSite.Layout.Technical.Directive',
+	'Common.Layout.coverUp.Directive',
+	'Common.Layout.backgroundImage.Directive',
+	'Common.Layout.backgroundScroll.Directive'
 ])
 
 /**

@@ -1,8 +1,11 @@
+/**
+ * @version 1.0.3
+ */
 
 /**
  * Module definition and dependencies
  */
-angular.module('Common.Layout.detectScrolling.Directive', [])
+angular.module('Common.Events.detectScrolling.Directive', [])
 
 /**
  * Directive
@@ -16,7 +19,7 @@ angular.module('Common.Layout.detectScrolling.Directive', [])
 			var dispatchEvent = function(scrollOffset) {
 				var scrollElement = this;
 				scope.$apply(function() {
-					$rootScope.isScrolling = (scrollOffset > 0);
+					scope.isScrolling = (scrollOffset > 0);
 					$rootScope.$broadcast('detectedScrolling', scrollElement, scrollOffset);
 				});
 			};
