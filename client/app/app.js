@@ -13,6 +13,7 @@ angular.module('DigiSite', [
 
 	//3rd party
 	'ui.router',
+	'smoothScroll',
 
 	//Templates
 	'Templates.App',

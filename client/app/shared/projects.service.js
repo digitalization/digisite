@@ -45,11 +45,11 @@ angular.module('DigiSite.Shared.Projects.Service', [])
 			thumb: "assets/images/projects/cybercop.jpg"
 		},
 		{
-			name: "Neurocenter",
-			client: "The psychology company",
-			tagline: "Cognitive tests suite for attention and memory disorders",
-			keywords: ["Cognitive tests", "Security"],
-			thumb: "assets/images/projects/neuro.jpg"
+			name: "Nena Sim",
+			client: "Epona Medical",
+			tagline: "The world’s most realistic baby simulator",
+			keywords: ["Embedded"],
+			thumb: "assets/images/projects/nena.jpg"
 		}
 	];
 });

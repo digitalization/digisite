@@ -12,20 +12,20 @@ angular.module('DigiSite.Nav.Menu.Service', [])
 
 		//Main menu
 		main: [
-			{sref: "home", title: "Software"},
-			{sref: "home", title: "Projecten"},
-			{sref: "home", title: "Bedrijf"},
-			{sref: "home", title: "Contact"}
+			{sref: "home.software", title: "Software"},
+			{sref: "home.projects", title: "Projects"},
+			{sref: "company", title: "Company"},
+			{sref: "home.contact", title: "Contact"}
 		],
 
 		//Footer menu
 		footer: [
 			{sref: "home", title: "Home"},
-			{sref: "home", title: "Software"},
-			{sref: "home", title: "Projecten"},
-			{sref: "vacancies", title: "Vacatures"},
-			{sref: "home", title: "Bedrijf"},
-			{sref: "home", title: "Contact"}
+			{sref: "home.software", title: "Software"},
+			{sref: "home.projects", title: "Projects"},
+			{sref: "vacancies", title: "Vacancies"},
+			{sref: "company", title: "Company"},
+			{sref: "home.contact", title: "Contact"}
 		]
 	};
 });

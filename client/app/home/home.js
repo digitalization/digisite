@@ -12,10 +12,37 @@ angular.module('DigiSite.Home', [
  */
 .config(function($stateProvider) {
 
-	//State definition
+	//Home
 	$stateProvider.state('home', {
 		url:			'/',
 		controller:		'HomeCtrl',
 		templateUrl:	'home/home.html'
+	});
+
+	//Projects
+	$stateProvider.state('home.projects', {
+		onEnter: function($timeout, smoothScroll) {
+			$timeout(function() {
+				smoothScroll(document.getElementById('projects'));
+			}, 10);
+		}
+	});
+
+	//Software
+	$stateProvider.state('home.software', {
+		onEnter: function($timeout, smoothScroll) {
+			$timeout(function() {
+				smoothScroll(document.getElementById('software'));
+			}, 10);
+		}
+	});
+
+	//Contact
+	$stateProvider.state('home.contact', {
+		onEnter: function($timeout, smoothScroll) {
+			$timeout(function() {
+				smoothScroll(document.getElementById('contact'));
+			}, 10);
+		}
 	});
 });

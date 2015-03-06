@@ -1,5 +1,6 @@
 <!-- home/home.html -->
 <section class="hero" cover-up="1" background-image="assets/images/site/hero.jpg">
+	<a name="software" id="software"></a>
 	<article>
 		<hgroup>
 			<h1>Software <i>re</i>invented.</h1>
@@ -29,9 +30,10 @@
 			<p><a ui-sref="technical" title="Technical applications">Find out more</a></p>
 		</div>
 	</article>
+	<a name="projects" id="projects"></a>
 </section>
 <section class="shadow-breaker"></section>
-<section class="no-padding">
+<section class="no-padding projects">
 	<project ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
 		<div class="cover" ng-show="Project.focus">
 			<div class="info">
@@ -60,6 +62,10 @@
 			<div><img src="assets/images/logos/lavetan.png" /></div>
 			<div><img src="assets/images/logos/epona.png" /></div>
 			<div><img src="assets/images/logos/brandweer.png" /></div>
+			<div><img src="assets/images/logos/ahh.png" /></div>
+			<div><img src="assets/images/logos/octatube.png" /></div>
+			<div><img src="assets/images/logos/rhine.png" /></div>
+			<div><img src="assets/images/logos/ucp.png" /></div>
 		</article>
 	</article>
 </section>
@@ -79,8 +85,10 @@
 	</article>
 </section>
 <section class="blue no-bottom shadow flex">
+	<a name="contact" id="contact"></a>
 	<article class="with-aside wider">
 		<h2>Get in touch</h2>
+		<p>Want to know more or get in touch with us? Fill out the form below and we'll get back to you!</p>
 		<form name="Form" ng-submit="submitForm(contact)"  novalidate ng-model-options="{updateOn: 'default blur', debounce: {default: 500, blur: 0}}">
 			<input type="text" name="name" id="name" ng-model="contact.name" required placeholder="name" />
 			<span class="error" ng-show="Form.$submitted || Form.name.$dirty" ng-messages="Form.name.$error">
@@ -106,7 +114,7 @@
 			<p>Rotterdamseweg 183 c<br />2629 HD Delft</p>
 			<p>+31 (0)15 268 25 69<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>
 			<h6>New Zealand office</h6>
-			<p>113 Tory Street<br />Wellington</p>
+			<p>113 Tory Street<br />Wellington 6011</p>
 			<p>+64 (0)22 100 1067<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>
 			<p class="no-mobile">&nbsp;</p>
 			<span class="icon-paper-plane large-icon"></span>

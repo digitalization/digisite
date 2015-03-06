@@ -32,7 +32,11 @@ angular.module('DigiSite.Layout', [
 	});
 
 	//Scroll to top on state changes
-	$rootScope.$on('$stateChangeSuccess', function(event) {
-		$window.scrollTo(0, 0);
+	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+		var toName = toState.name.split('.')[0],
+			fromName = formState.name.split('.')[0];
+		if (toName != fromName) {
+			$window.scrollTo(0, 0);
+		}
 	});
 });
