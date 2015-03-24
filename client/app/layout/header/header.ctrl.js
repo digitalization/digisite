@@ -26,12 +26,16 @@ angular.module('DigiSite.Layout.Header.Controller', [
 
 	//Listen for state changes to toggle compact header
 	$scope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-		currentState = toState.name;
-		if (currentState == 'home') {
-			$scope.isCompact = false;
-		}
-		else {
-			$scope.isCompact = true;
+		var toName = toState.name.split('.')[0],
+			fromName = fromState.name.split('.')[0];
+		currentState = toName;
+		if (toName != fromName) {
+			if (toName == 'home') {
+				$scope.isCompact = false;
+			}
+			else {
+				$scope.isCompact = true;
+			}
 		}
 	});
 });

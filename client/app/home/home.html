@@ -1,6 +1,5 @@
 <!-- home/home.html -->
 <section class="hero" cover-up="1" background-image="assets/images/site/hero.jpg">
-	<a name="software" id="software"></a>
 	<article>
 		<hgroup>
 			<h1>Software <i>re</i>invented.</h1>
@@ -9,7 +8,7 @@
 		<!--<p>Specialist in de ontwikkeling en integratie van hoogwaardige high-tech software systemen. Industri&euml;le automatisering, embedded software en technische applicaties.</p>-->
 	</article>
 </section>
-<section class="shadow">
+<section class="shadow" id="software">
 	<article class="columns">
 		<div class="column third">
 			<i class="icon-cogs"></i>
@@ -30,10 +29,9 @@
 			<p><a ui-sref="technical" title="Technical applications">Find out more</a></p>
 		</div>
 	</article>
-	<a name="projects" id="projects"></a>
 </section>
 <section class="shadow-breaker"></section>
-<section class="no-padding projects">
+<section class="no-padding projects" id="projects">
 	<project ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
 		<div class="cover" ng-show="Project.focus">
 			<div class="info">
@@ -43,10 +41,23 @@
 		</div>
 	</project>
 </section>
-<section class="shadow less-padding dark">
+<section class="shadow">
 	<article>
-		<h2>We did it before, find out how we can help you <a class="button" ui-sref="contact">Tell me more!</a></h2>
+		<h2>We did it before! Find out how we can help you. <a class="button" ui-sref="home.contact" ng-click="scrollTo('contact')">Tell me more!</a></h2>
 	</article>
+</section>
+<section class="shadow dark" id="company">
+	<article class="right widest with-aside">
+		<h2>About us</h2>
+		<p>Founded in 2005 in Delft, The Netherlands, Digitalization has grown into a reliable and innovative software partner for technical projects ranging from industrial automation to embedded software and web applications. In the 10 years that we have been providing software services, our team has built up a consistent track record of delivering high quality software, on time and at competitive rates.</p>
+		<p>The opening in 2011 of our New Zealand office in Wellington has enabled us to provide a global service with round the clock support for our clients.</p>
+		<p>We are always on the lookout for new opportunities. Get in touch with us if you have a project we might be able to help you with.</p>
+		<p><a class="button" ui-sref="home.contact" ng-click="scrollTo('contact')">Contact us</a></p>
+	</article>
+	<aside>
+		<img src="assets/images/site/delft.jpg" />
+		<img src="assets/images/site/wellington.jpg" />
+	</aside>
 </section>
 <section class="shadow less-padding">
 	<article>
@@ -84,8 +95,7 @@
 		<span class="linebreak"></span>
 	</article>
 </section>
-<section class="blue no-bottom shadow flex">
-	<a name="contact" id="contact"></a>
+<section class="blue no-bottom shadow flex" id="contact">
 	<article class="with-aside wider">
 		<h2>Get in touch</h2>
 		<p>Want to know more or get in touch with us? Fill out the form below and we'll get back to you!</p>
@@ -105,7 +115,6 @@
 				<p class="message" ng-message="required">Please fill out your question or comments.</p>
 			</span>
 			<button class="button primary" type="submit">Submit</button>
-			<br/><br/><br/>
 		</form>
 	</article>
 	<aside class="blue-box">

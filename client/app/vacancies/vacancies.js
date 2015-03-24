@@ -13,7 +13,7 @@ angular.module('DigiSite.Vacancies', [
 
 	//State definition
 	$stateProvider.state('vacancies', {
-		url:			'/vacatures',
+		url:			'/vacancies',
 		controller:		'VacanciesCtrl',
 		templateUrl:	'vacancies/vacancies.html'
 	});

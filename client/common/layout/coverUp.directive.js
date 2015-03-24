@@ -24,7 +24,7 @@ angular.module('Common.Layout.coverUp.Directive', [
 				if (margin > element[0].clientHeight) {
 					margin = element[0].clientHeight;
 				}
-				element.css({marginBottom: -1 * margin + 'px'});
+				//element.css({marginBottom: -1 * margin + 'px'});
 			});
 		}
 	};
