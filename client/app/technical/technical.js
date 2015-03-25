@@ -13,7 +13,7 @@ angular.module('DigiSite.Technical', [
 
 	//State definition
 	$stateProvider.state('technical', {
-		url:			'/technische-software',
+		url:			'/technical-software',
 		controller:		'TechnicalCtrl',
 		templateUrl:	'technical/technical.html'
 	});

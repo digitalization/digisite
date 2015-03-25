@@ -12,28 +12,28 @@ angular.module('DigiSite.Shared.Projects.Service', [])
 		{
 			name: "Eurofins Nantes",
 			client: "TECNIC",
-			tagline: "SCADA system with LIMS interaction",
-			keywords: ["SCADA", "LIMS", "PLC"],
+			tagline: "Automation system with HMI, distribution logic and LIMS interaction",
+			keywords: ["SCADA", "LIMS", "PLC", "HMI"],
 			thumb: "assets/images/projects/inobot-1.jpg"
 		},
 		{
 			name: "Lavetan",
 			client: "TECNIC",
-			tagline: "SCADA system with LIMS interaction",
-			keywords: ["SCADA", "LIMS", "PLC"],
+			tagline: "Automation system with HMI, distribution logic en LIMS interaction",
+			keywords: ["SCADA", "LIMS", "PLC", "HMI"],
 			thumb: "assets/images/projects/inobot-2.jpg"
 		},
 		{
 			name: "Inobot",
 			client: "TECNIC",
-			tagline: "A piece of junk which does stuff",
+			tagline: "Robot which automates 3M Petri Film innoculation",
 			keywords: ["SCADA", "LIMS", "PLC"],
 			thumb: "assets/images/projects/inobot-3.jpg"
 		},
 		{
 			name: "TAPR",
 			client: "TECNIC",
-			tagline: ".NET and PLC programming with USB communication",
+			tagline: "Automated 3M Petri Film enumeration with .NET and embedded (Microchip) programming, USB communication and HMI",
 			keywords: [".NET", "USB", "PLC"],
 			thumb: "assets/images/projects/inobot-4.jpg"
 		},
@@ -47,7 +47,7 @@ angular.module('DigiSite.Shared.Projects.Service', [])
 		{
 			name: "Nena Sim",
 			client: "Epona Medical",
-			tagline: "The world’s most realistic baby simulator",
+			tagline: "A very realistic robot baby with scenario loading and GUI",
 			keywords: ["Embedded"],
 			thumb: "assets/images/projects/nena.jpg"
 		}
