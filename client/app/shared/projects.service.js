@@ -34,7 +34,7 @@ angular.module('DigiSite.Shared.Projects.Service', [])
 			name: "TAPR",
 			client: "TECNIC",
 			tagline: "Automated 3M Petri Film enumeration with .NET and embedded (Microchip) programming, USB communication and HMI",
-			keywords: [".NET", "USB", "PLC"],
+			keywords: [".NET", "USB", "Embedded"],
 			thumb: "assets/images/projects/inobot-4.jpg"
 		},
 		{
@@ -47,7 +47,7 @@ angular.module('DigiSite.Shared.Projects.Service', [])
 		{
 			name: "Nena Sim",
 			client: "Epona Medical",
-			tagline: "A very realistic robot baby with scenario loading and GUI",
+			tagline: "The world’s most realistic baby simulator",
 			keywords: ["Embedded"],
 			thumb: "assets/images/projects/nena.jpg"
 		}
