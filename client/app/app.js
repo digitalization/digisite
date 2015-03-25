@@ -19,10 +19,6 @@ angular.module('DigiSite', [
 	'Templates.App',
 	'Templates.Common',
 
-	//Common services and directives
-	'Common.Utils.StringUtils.Service',
-	'Common.Utils.StorageUtils.Service',
-
 	//Core modules
 	'DigiSite.Controller',
 	'DigiSite.Layout',
@@ -43,11 +39,7 @@ angular.module('DigiSite', [
 .constant('DigiSite', {
 	name:		'Digitalization',
 	version:	'7.0.0',
-	copyright:	2015,
-	error:		{
-		SOME_ERROR: 	1,
-		OTHER_ERROR:	2
-	}
+	copyright:	2015
 })
 
 /**
@@ -69,11 +61,4 @@ angular.module('DigiSite', [
         	$delegate(exception, cause);
         };
     });
-})
-
-/**
- * Run logic
- */
-.run(function() {
-
 });

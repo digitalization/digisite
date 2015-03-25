@@ -5,27 +5,13 @@
 angular.module('DigiSite.Nav.Menu.Service', [])
 
 /**
- * Factory definition
+ * Constant definition
  */
-.factory('Menu', function() {
-	return {
-
-		//Main menu
-		main: [
-			{sref: "home.software", title: "Software", section: "software"},
-			{sref: "home.projects", title: "Projects", section: "projects"},
-			{sref: "home.company", title: "Company", section: "company"},
-			{sref: "home.contact", title: "Contact", section: "contact"}
-		],
-
-		//Footer menu
-		footer: [
-			{sref: "home", title: "Home"},
-			{sref: "home.software", title: "Software"},
-			{sref: "home.projects", title: "Projects"},
-			{sref: "vacancies", title: "Vacancies"},
-			{sref: "home.company", title: "Company"},
-			{sref: "home.contact", title: "Contact"}
-		]
-	};
-});
+.constant('Menu', [
+	{sref: "home", title: "Home", section: "home", isMain: false},
+	{sref: "home.software", title: "Software", section: "software", isMain: true},
+	{sref: "home.projects", title: "Projects", section: "projects", isMain: true},
+	{sref: "home.company", title: "Company", section: "company", isMain: true},
+	{sref: "vacancies", title: "Vacancies", isMain: false},
+	{sref: "home.contact", title: "Contact", section: "contact", isMain: true}
+]);

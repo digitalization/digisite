@@ -14,14 +14,13 @@
     <% scripts.forEach(function (file) { %>
     <script src="js/<%= file %>"></script><% }); %>
 </head>
-
 <body lang="nl" detect-scrolling>
 <header ng-controller="HeaderCtrl" ng-class="{'compact': isCompact}">
 	<div class="padder">
-		<img class="logo pointer" src="assets/images/site/logo-compound.png" ui-sref="home" />
+		<img class="logo pointer" src="assets/images/site/logo-compound.png" ui-sref="home" ng-click="scrollTo('home')" />
 		<nav>
 			<menu class="no-spacing" ng-cloak>
-				<li ng-repeat="item in Menu.main"><a ng-click="item.section?scrollTo(item.section):''" ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}">{{item.title}}</a></li>
+				<li ng-repeat="item in Menu"><a ng-if="item.isMain" ng-click="item.section?scrollTo(item.section):''" ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}">{{item.title}}</a></li>
 			</menu>
 		</nav>
 	</div>
@@ -31,7 +30,7 @@
 <footer>
 	<nav>
 		<menu class="no-spacing" ng-cloak>
-			<li ng-repeat="item in Menu.footer"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}" ng-click="item.section?scrollTo(item.section):''">{{item.title}}</a></li>
+			<li ng-repeat="item in Menu"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}" ng-click="item.section?scrollTo(item.section):''">{{item.title}}</a></li>
 		</menu>
 	</nav>
 	<p class="copyright">Copyright &copy; <span ng-bind="DigiSite.copyright">2015</span> <span ng-bind="DigiSite.name">Digitalization</span></p>

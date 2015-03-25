@@ -20,16 +20,21 @@ angular.module('DigiSite.Home', [
 
 	//Projects
 	$stateProvider.state('home.projects', {
-
+		url: 'projects'
 	});
 
 	//Software
 	$stateProvider.state('home.software', {
+		url: 'software'
+	});
 
+	//Company
+	$stateProvider.state('home.company', {
+		url: 'company'
 	});
 
 	//Contact
 	$stateProvider.state('home.contact', {
-
+		url: 'contact'
 	});
 });
