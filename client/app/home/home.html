@@ -1,6 +1,6 @@
 <!-- home/home.html -->
 <section class="hero" cover-up="1" background-image="assets/images/site/hero.jpg">
-	<article>
+	<article class="no-padding">
 		<hgroup>
 			<h1>Software <i>re</i>invented.</h1>
 			<h2>We specialize in innovative technical software.</h2>
@@ -30,7 +30,7 @@
 	</article>
 </section>
 <section class="shadow-breaker"></section>
-<section class="no-padding projects" id="projects">
+<section class="projects" id="projects">
 	<project ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
 		<div class="cover" ng-show="Project.focus">
 			<div class="info">
@@ -45,38 +45,36 @@
 		<h2>Challenge us! Let us help you transform your idea into reality. <a class="button" ui-sref="home.contact" ng-click="scrollTo('contact')">Tell me more!</a></h2>
 	</article>
 </section>
-<section class="shadow dark" id="company">
-	<article class="right widest with-aside">
+<section class="shadow dark flex" id="company">
+	<article class="right">
 		<h2>About us</h2>
-		<p>Founded in 2005 in Delft, The Netherlands, Digitalization has grown into a reliable and innovative software partner for technical projects ranging from industrial automation to embedded software and web applications. In the 10 years that we have been providing software services, our team has built up a consistent track record of delivering high quality software, on time and at competitive rates.</p>
-		<p>The opening in 2011 of our New Zealand office in Wellington has enabled us to provide a global service with round the clock support for our clients.</p>
+		<p>Founded in 2005 in Delft, The Netherlands, Digitalization has grown into a reliable and innovative software partner, specialized in technical projects ranging from industrial automation to embedded software and web applications. In the 10 years that we have been providing software services, our multidisciplinary team has built up a consistent track record of delivering high quality software, on time and at competitive rates.</p>
+		<p>The opening in 2011 of our New Zealand office located in Wellington has enabled us to provide a truly global service with round the clock support for our clients.</p>
 		<p>We are always on the lookout for new opportunities. Get in touch with us if you have a project we might be able to help you with.</p>
 		<p><a class="button" ui-sref="home.contact" ng-click="scrollTo('contact')">Contact us</a></p>
 	</article>
-	<aside>
+	<aside class="left">
 		<img src="assets/images/site/delft.jpg" />
 		<img src="assets/images/site/wellington.jpg" />
 	</aside>
 </section>
-<section class="shadow less-padding">
-	<article>
-		<article class="logos">
-			<div><img src="assets/images/logos/tno.png" /></div>
-			<div><img src="assets/images/logos/eurofins.png" /></div>
-			<div><img src="assets/images/logos/tecnic.png" /></div>
-			<div><img src="assets/images/logos/travelport.png" /></div>
-			<div><img src="assets/images/logos/aqualab.png" /></div>
-			<div><img src="assets/images/logos/travelfusion.png" /></div>
-			<div><img src="assets/images/logos/neurocenters.png" /></div>
-			<div><img src="assets/images/logos/sdna.png" /></div>
-			<div><img src="assets/images/logos/lavetan.png" /></div>
-			<div><img src="assets/images/logos/epona.png" /></div>
-			<div><img src="assets/images/logos/brandweer.png" /></div>
-			<div><img src="assets/images/logos/ahh.png" /></div>
-			<div><img src="assets/images/logos/octatube.png" /></div>
-			<div><img src="assets/images/logos/rhine.png" /></div>
-			<div><img src="assets/images/logos/ucp.png" /></div>
-		</article>
+<section class="shadow">
+	<article class="logos no-padding">
+		<div><img src="assets/images/logos/tno.png" /></div>
+		<div><img src="assets/images/logos/eurofins.png" /></div>
+		<div><img src="assets/images/logos/tecnic.png" /></div>
+		<div><img src="assets/images/logos/travelport.png" /></div>
+		<div><img src="assets/images/logos/aqualab.png" /></div>
+		<div><img src="assets/images/logos/travelfusion.png" /></div>
+		<div><img src="assets/images/logos/neurocenters.png" /></div>
+		<div><img src="assets/images/logos/sdna.png" /></div>
+		<div><img src="assets/images/logos/lavetan.png" /></div>
+		<div><img src="assets/images/logos/epona.png" /></div>
+		<div><img src="assets/images/logos/brandweer.png" /></div>
+		<div><img src="assets/images/logos/ahh.png" /></div>
+		<div><img src="assets/images/logos/octatube.png" /></div>
+		<div><img src="assets/images/logos/rhine.png" /></div>
+		<div><img src="assets/images/logos/ucp.png" /></div>
 	</article>
 </section>
 <section class="notes overlay" background-scroll="assets/images/large/20140122-Machines-007.jpg" scroll-x="0.2" scroll-y="0.5">
@@ -95,7 +93,7 @@
 	</article>
 </section>
 <section class="blue no-bottom shadow flex" id="contact">
-	<article class="with-aside wider">
+	<article class="left">
 		<h2>Get in touch</h2>
 		<p>Want to know more or get in touch with us? Fill out the form below and we'll get back to you!</p>
 		<form name="Form" ng-submit="submitForm(contact)"  novalidate ng-model-options="{updateOn: 'default blur', debounce: {default: 500, blur: 0}}">
@@ -117,7 +115,7 @@
 		</form>
 	</article>
 	<aside class="blue-box">
-		<div>
+		<div class="inner">
 			<h6>Netherlands office</h6>
 			<p>Rotterdamseweg 183 c<br />2629 HD Delft</p>
 			<p>+31 (0)15 268 25 69<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>

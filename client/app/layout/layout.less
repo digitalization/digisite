@@ -106,9 +106,6 @@ hr {
 .no-spacing {
 	font-size: 0;
 }
-.flex {
-	display: flex;
-}
 
 //Font styles
 b, strong, .bold {
@@ -202,10 +199,12 @@ header.compact {
 //Sections
 section {
 	position: relative;
-	padding: 5rem 6rem;
 	overflow: auto;
 	background: @colorBgMain;
 	.transition(box-shadow .2s linear);
+	&.flex {
+		display: flex;
+	}
 }
 
 //Hero section
@@ -351,7 +350,13 @@ section {
 	background: @colorAccent;
 	color: @colorWhite;
 	.box-shadow(-15px 15px 20px rgba(0,0,0,0.15));
-	padding: @lineHeight @lineHeight;
+	padding: 0;
+	margin-top: 5rem;
+	margin-right: 6rem;
+	min-width: 18rem;
+	.inner {
+		padding: @lineHeight @lineHeight;
+	}
 	h5, h6, [class^="icon-"]::before, [class*=" icon-"]::before {
 		color: #8fbbde;
 	}
@@ -363,27 +368,36 @@ section {
 //Article/aside structure
 article {
 	position: relative;
-	width: 100%;
-	margin-bottom: @lineHeight;
+	padding: 5rem 6rem;
+	&.no-padding {
+		padding: 0;
+	}
+	&.with-aside {
+		order: 1;
+	}
+	&.right {
+		order: 2;
+	}
+	&.wider {
+		flex-grow: 2;
+	}
+	&.widest {
+		flex-grow: 3;
+	}
 }
-article.right {
-	float: right;
-}
-.with-aside {
-	width: 50%;
-	float: left;
-}
-.wider {
-	width: 57.5%;
-	flex-grow: 2;
-}
-.widest {
-	width: 65%;
-}
+
+
 aside {
-	width: 40%;
-	float: right;
 	position: relative;
+	padding: 5rem 6rem 5rem 0;
+	order: 2;
+	&.left {
+		order: 1;
+		padding: 5rem 0 5rem 6rem;
+	}
+	&.no-padding {
+		padding: 0;
+	}
 	img {
 		.box-shadow(@shadowImages);
 	}
@@ -400,15 +414,6 @@ aside {
 		font-size: 14rem;
 		width: auto !important;
 	}
-}
-article.wider + aside {
-	width: 32.5%;
-}
-article.widest + aside {
-	width: 25%;
-}
-article.right + aside {
-	float: left;
 }
 
 //Footer
