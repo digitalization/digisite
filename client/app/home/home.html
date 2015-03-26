@@ -18,7 +18,7 @@
 		<div class="column third">
 			<i class="icon-plug"></i>
 			<h2>Embedded<br />Software</h2>
-			<p>Our experienced embedded software programmers offer expertise on a range of platforms, such as Arduino, Raspberry Pi and Microchip. Our multi-disciplinary team can program the controllers, write interfaces and connect to a graphical user interface.</p>
+			<p>Our experienced embedded software programmers offer expertise on a range of platforms, such as Arduino, Raspberry Pi and Microchip. Our multi-disciplinary team can program the controllers, develop the interfaces, and connect to a graphical user interface.</p>
 			<p><a ui-sref="embedded" title="Embedded software">Find out more</a></p>
 		</div>
 		<div class="column third">
@@ -34,17 +34,21 @@
 	<project ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
 		<div class="cover" ng-show="Project.focus">
 			<div class="info">
-				<h2>{{Project.name}}</h2>
-				<p>{{Project.tagline}}</p>
+				<h2 ng-bind-html="Project.name"></h2>
+				<p ng-bind-html="Project.tagline"></p>
 			</div>
 		</div>
 	</project>
 </section>
 <section class="shadow">
-	<article class="less-padding clear">
-		<h2>Let us help you transform your idea into reality.</h2>
-		<p>Above is only a sample of our expertise. We are always looking for a new challenge!</p>
-		<p><a class="button" ui-sref="home.contact" ng-click="scrollTo('contact')">Tell me more!</a></p>
+	<article class="less-padding flex">
+		<div class="challenge-slogan">
+			<h2>Transform your idea into reality</h2>
+			<p>The above will give you a small taste of our expertise, but we are always looking for a new challenge!</p>
+		</div>
+		<div class="challenge-cta">
+			<a class="button" ui-sref="home.contact" ng-click="scrollTo('contact')">Tell me more!</a>
+		</div>
 	</article>
 </section>
 <section class="shadow dark flex" id="company">
