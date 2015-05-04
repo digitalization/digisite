@@ -1,0 +1,64 @@
+
+/**
+ * Clients
+ */
+.client-logos {
+	.display-flex();
+	.flex-flow(row wrap);
+	div {
+		height: 120px;
+		width: 50%;
+		text-align: center;
+		&:nth-child(odd) {
+			padding-right: 1rem;
+		}
+		&:nth-child(even) {
+			padding-left: 1rem;
+		}
+	}
+	div:before {
+		content: ' ';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	img {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	@media (min-width: 768px) {
+		div {
+			width: 33%;
+			&:nth-child(odd) {
+				padding-right: 0;
+			}
+			&:nth-child(even) {
+				padding-left: 0;
+			}
+			&:nth-child(3n+1) {
+				padding-right: 1rem;
+				text-align: left;
+			}
+			&:nth-child(3n+2) {
+				padding: 0 1rem;
+				text-align: center;
+			}
+			&:nth-child(3n+3) {
+				padding-left: 1rem;
+				text-align: right;
+			}
+		}
+	}
+	@media (min-width: 1024px) {
+		div {
+			height: 200px;
+		}
+		img {
+			cursor: pointer;
+			.transition(all .1s linear);
+			&:hover {
+				transform: scale(.8, .8) rotate(-5deg);
+			}
+		}
+	}
+}

@@ -6,31 +6,25 @@ angular.module('DigiSite', [
 
 	//Angular
 	'ngAnimate',
-	'ngTouch',
-	'ngCookies',
 	'ngSanitize',
 	'ngMessages',
 
 	//3rd party
 	'ui.router',
-	'smoothScroll',
 
 	//Templates
 	'Templates.App',
 	'Templates.Common',
 
-	//Core modules
+	//Site modules
 	'DigiSite.Controller',
-	'DigiSite.Layout',
 	'DigiSite.Nav',
-
-	//Other modules
-	'DigiSite.Home',
-	'DigiSite.Vacancies',
+	'DigiSite.Home'
+	/*'DigiSite.Vacancies',
 	'DigiSite.Industrial',
 	'DigiSite.Embedded',
 	'DigiSite.Webbased',
-	'DigiSite.Technical'
+	'DigiSite.Technical'*/
 ])
 
 /**
@@ -61,4 +55,26 @@ angular.module('DigiSite', [
         	$delegate(exception, cause);
         };
     });
+})
+
+/**
+ * Run logic
+ */
+.run(function($rootScope, $location, $window, DigiSite) {
+
+	//Set app constant in root scope
+	$rootScope.DigiSite = DigiSite;
+
+	/**
+	 * On state changes, trigger a page view
+	 */
+	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+
+		//Track page view
+		if ($window.ga) {
+			$window.ga('send', 'pageview', {
+				page: $location.url()
+			});
+		}
+	});
 });

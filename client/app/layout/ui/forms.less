@@ -1,71 +1,62 @@
 
-/**********************************************************************************
- * Forms
+/**
+ * Input elements
  */
-
-//Form
-form {
-	margin-bottom: @lineHeight;
-}
 input, select, textarea {
 	font-family: @fontFamily;
 	font-size: @fontSizeNormal;
 	font-weight: @fontWeightNormal;
 	color: @colorText;
 }
-::-webkit-input-placeholder {
-	font-size: @fontSizeNormal;
-	color: @colorTextFaded;
-}
-::-moz-placeholder {
-	font-size: @fontSizeNormal;
-	color: @colorTextFaded;
-}
-:-ms-input-placeholder {
-	font-size: @fontSizeNormal;
-	color: @colorTextFaded;
-}
-form label {
+
+/**
+ * Form labels
+ */
+.form-label {
 	display: block;
 	clear: both;
 	height: @lineHeight;
 	line-height: @lineHeight;
-	margin-bottom: @lineHeight/2;
+	margin-bottom: @marginParagraph/2;
 	font-size: @fontSizeSmall;
-	color: @colorTextFaded;
-	text-transform: lowercase;
-}
-form input:not([type='submit']):not([type='file']):not([type='checkbox']):not([type='radio']),
-form select, form textarea {
-	width: 100%;
-	margin-bottom: @lineHeight;
-	color: @colorText;
-	border: 0;
-	.box();
-	padding: 1rem 1.5rem;
-}
-form textarea {
-	height: @lineHeight*5;
-}
-form input:not([type='submit']):not([type='file']):not([type='checkbox']):not([type='radio']).half {
-	float: left;
-	width: 49%;
-	margin-right: 2%;
-}
-form input:not([type='submit']):not([type='file']):not([type='checkbox']):not([type='radio']).half + .half {
-	margin: 0;
+	color: @colorTextLight;
 }
 
 /**
- * messages underneath fields
+ * Form controls
  */
-form {
-	.message {
-		font-size: @fontSizeSmall;
-		font-style: @fontStyleItalic;
-		margin-top: -1rem;
+.form-control {
+	width: 100%;
+	color: @colorText;
+	border: 1px solid @colorWhite;
+	padding: @lineHeight*0.5 @lineHeight*0.75;
+	background: @colorWhite;
+}
+
+/**
+ * Form groups
+ */
+.form-group {
+	margin-bottom: @marginParagraph/2;
+	&.has-error {
+		.form-control {
+			color: @colorTextError;
+		}
 	}
-	span .message {
-		margin-bottom: @lineHeight;
-	}
+}
+
+/**
+ * Placeholders
+ */
+::-webkit-input-placeholder {
+	font-size: @fontSizeNormal;
+	color: @colorTextLight;
+}
+::-moz-placeholder {
+	font-size: @fontSizeNormal;
+	color: @colorTextLight;
+}
+:-ms-input-placeholder {
+	font-size: @fontSizeNormal;
+	color: @colorTextLight;
 }

@@ -15,6 +15,7 @@ if ($uri !== '/' and file_exists($requested)) {
 
 //Requests for the API?
 if (strpos($uri, '/api') !== false) {
+	sleep(1);
 	require_once $public.'/api.php';
 	return;
 }

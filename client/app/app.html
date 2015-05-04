@@ -2,7 +2,7 @@
 <html ng-controller="AppCtrl">
 <head>
 	<base href="/" />
-	<title ng-bind="title">Digitalization</title>
+	<title ng-bind="DigiSite.name">Digitalization</title>
 	<meta charset="utf-8" />
 	<meta name="author" content="Digitalization" />
 	<meta name="description" content="" />
@@ -14,27 +14,41 @@
     <% scripts.forEach(function (file) { %>
     <script src="js/<%= file %>"></script><% }); %>
 </head>
-<body lang="nl" detect-scrolling>
-<header ng-controller="HeaderCtrl" ng-class="{'compact': isCompact}">
-	<div class="padder">
-		<img class="logo pointer" src="assets/images/site/logo-compound.png" ui-sref="home" ng-click="scrollTo('home')" />
-		<nav>
-			<menu class="no-spacing" ng-cloak>
-				<li ng-repeat="item in Menu"><a ng-if="item.isMain" ng-click="item.section?scrollTo(item.section):''" ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}">{{item.title}}</a></li>
-			</menu>
-		</nav>
+<body lang="en" detect-window-scrolling>
+<header class="site-header" ng-controller="NavCtrl" ng-class="{compact: isScrolled}">
+	<div class="confined">
+		<div class="wrapper" ng-cloak>
+			<div class="logo">
+				<img class="pointer" src="assets/images/site/logo-compound.png" ui-sref="home" />
+			</div>
+			<button type="button" class="menu-toggle" ng-click="toggleMenu()" ng-class="{toggled: isMenuVisible}">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="menu" ng-class="{visible: isMenuVisible, mobile: isMobile}" ng-click="toggleMenu(false)">
+				<menu ng-cloak>
+					<li ng-repeat="item in Menu" ng-class="item.classes"><a ui-sref="{{item.sref}}" ng-class="{active: isActiveState(item.sref)}" title="{{item.title}}">{{item.title}}</a></li>
+				</menu>
+			</nav>
+		</div>
 	</div>
 </header>
-<main ui-view class="state">
-</main>
-<footer>
-	<nav>
-		<menu class="no-spacing" ng-cloak>
-			<li ng-repeat="item in Menu"><a ui-sref="{{item.sref}}" ui-sref-active="active" title="{{item.title}}" ng-click="item.section?scrollTo(item.section):''">{{item.title}}</a></li>
-		</menu>
-	</nav>
-	<p class="copyright">Copyright &copy; <span ng-bind="DigiSite.copyright">2015</span> <span ng-bind="DigiSite.name">Digitalization</span></p>
-	<img src="assets/images/site/logo.png">
+<main class="site-contents" ui-view></main>
+<footer class="site-footer">
+	<div class="confined">
+		<div class="wrapper">
+			<div class="text">
+				<menu ng-cloak>
+					<li ng-repeat="item in Menu"><a ui-sref="{{item.sref}}" ng-class="{active: isActiveState(item.sref)}" title="{{item.title}}">{{item.title}}</a></li>
+				</menu>
+				<p>Copyright &copy; <span ng-bind="DigiSite.copyright">2015</span> <span ng-bind="DigiSite.name">Digitalization</span></p>
+			</div>
+			<div class="logo">
+				<a class="pointer" ui-sref="home"><img src="assets/images/site/logo.png" /></a>
+			</div>
+		</div>
+	</div>
 </footer>
 <script>
 	angular.element(document).ready(function() {
@@ -46,8 +60,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-26149031-1', 'www.digitalization.nl');
-    ga('send', 'pageview');
+    ga('create', 'UA-26149031-1', 'auto');
 </script>
 </body>
 </html>

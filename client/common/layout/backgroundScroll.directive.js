@@ -1,6 +1,3 @@
-/**
- * @version 1.0.2
- */
 
 /**
  * Module definition and dependencies
@@ -54,7 +51,7 @@ angular.module('Common.Layout.backgroundScroll.Directive', [
 			img.src = src;
 
 			//Act on scrolling
-			scope.$on('detectedScrolling', function(event, scrollElement, scrollOffset) {
+			scope.$on('detectedScrolling', function(event, scrollOffset) {
 
 				//Determine element top
 				var elemTop = element[0].offsetTop - $window.innerHeight,

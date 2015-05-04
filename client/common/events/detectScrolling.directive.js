@@ -1,6 +1,3 @@
-/**
- * @version 1.0.3
- */
 
 /**
  * Module definition and dependencies
@@ -10,28 +7,26 @@ angular.module('Common.Events.detectScrolling.Directive', [])
 /**
  * Directive
  */
-.directive('detectScrolling', function($window, $rootScope) {
+.directive('detectScrolling', function($rootScope) {
 	return {
 		restrict: 'A',
 		link: function(scope, element, attrs) {
 
-			//Event handler
-			var dispatchEvent = function(scrollOffset) {
-				var scrollElement = this;
-				scope.$apply(function() {
-					scope.isScrolling = (scrollOffset > 0);
-					$rootScope.$broadcast('detectedScrolling', scrollElement, scrollOffset);
-				});
-			};
-
 			//Attach event to element
 			element.on('scroll', function() {
-				dispatchEvent.call(element, element.context.scrollTop);
-			});
+				var scrollOffset = 0;
+				if (typeof element[0].scrollTop != 'undefined') {
+					scrollOffset = element[0].scrollTop;
+				}
+				else if (element[0].context && element[0].context.scrollTop != 'undefined') {
+					scrollOffset = element[0].context.scrollTop;
+				}
 
-			//Attach event to window
-			angular.element($window).on('scroll', function() {
-				dispatchEvent.call($window, $window.pageYOffset);
+				//Broadcast event
+				scope.$apply(function() {
+					scope.isScrolling = (scrollOffset > 0);
+					$rootScope.$broadcast('detectedScrolling', scrollOffset, element);
+				});
 			});
 		}
 	};

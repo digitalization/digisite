@@ -1,0 +1,56 @@
+
+/**
+ * Footer
+ */
+.site-footer {
+	background:	@colorBgDarkGrey;
+	position: relative;
+	z-index: 5;
+	p, a {
+		font-size: @fontSizeSmall;
+		color: #888;
+	}
+	p, menu, .logo {
+		text-align: center;
+	}
+	menu {
+		li {
+			list-style: none;
+			display: inline-block;
+			margin: 0 1rem 0 0;
+		}
+	}
+	.wrapper {
+		padding: 1rem 0;
+		.text {
+			margin-bottom: @marginSection;
+			menu {
+				margin-bottom: @marginSection;
+			}
+		}
+		.logo {
+			text-align: center;
+		}
+		img {
+			width: 6rem;
+			height: 6rem;
+		}
+	}
+
+
+	@media (min-width: 768px) {
+		p, menu, .logo {
+			text-align: left;
+		}
+		.wrapper {
+			.display-flex();
+			.text {
+				.flex(1 0 0);
+				margin: 0;
+			}
+			.logo {
+				.flex(0 0 auto);
+			}
+		}
+	}
+}

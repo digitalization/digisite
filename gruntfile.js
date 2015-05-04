@@ -16,7 +16,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-bump');
 	grunt.loadNpmTasks('grunt-text-replace');
 	grunt.loadNpmTasks('grunt-ng-annotate');
-	grunt.loadNpmTasks('grunt-fontello');
 
 	/**
 	 * Set base path
@@ -86,24 +85,30 @@ module.exports = function(grunt) {
 		vendor_files: {
 			js: [
 				'vendor/angular/angular.js',
-				'vendor/angular/plugins/angular-touch.js',
-				'vendor/angular/plugins/angular-animate.js',
-				'vendor/angular/plugins/angular-cookies.js',
-				'vendor/angular/plugins/angular-sanitize.js',
-				'vendor/angular/plugins/angular-resource.js',
-				'vendor/angular/plugins/angular-messages.js',
-				'vendor/angular/plugins/angular-ui-router.js',
-				'vendor/angular/plugins/angular-smooth-scroll.min.js'
+				'vendor/angular/angular-animate.js',
+				'vendor/angular/angular-sanitize.js',
+				'vendor/angular/angular-messages.js',
+				'vendor/angular-ui/angular-ui-router.js',
+				'vendor/other/angular-smooth-scroll.min.js'
 			],
-			less: [],
-			css: [],
-			assets: []
+			less: [
+
+			],
+			css: [
+				'vendor/highlight/styles/dark.css'
+			],
+			assets: [
+
+			]
 		},
 
 		/**
-		 * Location of server files that need to be copied to the public folder
+		 * Location of root files that need to be copied to the public folder
 		 */
-		server_files: '../server/run/'
+		root_files: {
+			client: 'root/',
+			server: '../server/root/'
+		}
 	};
 
 	/**
@@ -170,20 +175,6 @@ module.exports = function(grunt) {
 					from: /'([0-9]\.[0-9]+\.[0-9]+)'/i,
 					to: '\'<%= pkg.version %>\''
 				}]
-			}
-		},
-
-		/**
-		 * Fontello task
-		 */
-		fontello: {
-			dist: {
-				options: {
-					config: 'assets/fonts/fontello.json',
-					fonts: 'assets/fonts',
-					styles: 'assets/fonts',
-					force: true
-				}
 			}
 		},
 
@@ -288,16 +279,22 @@ module.exports = function(grunt) {
 				}]
 			},
 
-			//Copy the public server files
-			public_server: {
+			//Copy the public root files
+			public_root: {
 				files: [{
 					src: [ '**' ],
 					dest: '<%= deploy_dir %>',
-					cwd: '<%= server_files %>',
+					cwd: '<%= root_files.client %>',
+					dot: true,
+					expand: true
+				}, {
+					src: [ '**' ],
+					dest: '<%= deploy_dir %>',
+					cwd: '<%= root_files.server %>',
 					dot: true,
 					expand: true
 				}]
-			},
+			}
 		},
 
 		/**
@@ -626,7 +623,7 @@ module.exports = function(grunt) {
 			 */
 			less: {
 				files: [ 'app/**/*.less', 'common/**/*.less', 'vendor/**/*.less' ],
-				tasks: [ 'recess:build', 'copy:public_build', 'clean:temp' ]
+				tasks: [ 'recess:build', 'concat:build_css', 'copy:public_build', 'clean:temp' ]
 			},
 
 			/**
@@ -695,7 +692,7 @@ module.exports = function(grunt) {
 		'karmaconfig', 'karma:unit',
 
 		//Copy everything to the public folder and clean the temp folder
-		'copy:public_build', 'copy:public_server', 'clean:temp'
+		'copy:public_build', 'copy:public_root', 'clean:temp'
 	]);
 
 	/**
@@ -722,7 +719,43 @@ module.exports = function(grunt) {
 		'copy:compile_assets',
 
 		//Copy everything to the public folder, clean the temp folder
-		'copy:public_compile', 'copy:public_server', 'clean:temp'
+		'copy:public_compile', 'copy:public_root', 'clean:temp'
+	]);
+
+	/**
+	 * The 'deploy' task builds the app without testing and deploys it to the deploy dir
+	 */
+	grunt.registerTask('deploy', [
+
+		//Clean directories
+		'clean:temp', 'clean:public',
+
+		//Convert HTML templates to JS
+		'html2js',
+
+		//Compile CSS and merge with vendor CSS
+		'recess:build', 'concat:build_css',
+
+		//Copy application and vendor assets
+		'copy:build_app_assets', 'copy:build_vendor_assets',
+
+		//Copy application and vendor javascript files
+		'copy:build_app_js', 'copy:build_vendor_js',
+
+		//Compile the final CSS
+		'recess:compile',
+
+		//Apply angular minification protection, concatenate all JS into a single file and minify the code
+		'ngAnnotate', 'concat:compile_app_js', 'uglify', 'concat:compile_vendor_js',
+
+		//Build the index.html file
+		'index:compile',
+
+		//Copy all assets
+		'copy:compile_assets',
+
+		//Copy everything to the public folder, clean the temp folder
+		'copy:public_compile', 'copy:public_root', 'clean:temp'
 	]);
 
 	/**

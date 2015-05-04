@@ -3,7 +3,10 @@
  * Module definition and dependencies
  */
 angular.module('DigiSite.Home', [
-	'DigiSite.Home.Controller'
+	'DigiSite.Home.Controller',
+	'Common.Layout.coverUp.Directive',
+	'Common.Layout.backgroundImage.Directive',
+	'Common.Layout.backgroundScroll.Directive'
 ])
 
 /**
@@ -31,6 +34,11 @@ angular.module('DigiSite.Home', [
 	//Company
 	$stateProvider.state('home.company', {
 		url: 'company'
+	});
+
+	//Clients
+	$stateProvider.state('home.clients', {
+		url: 'clients'
 	});
 
 	//Contact

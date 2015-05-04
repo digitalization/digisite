@@ -1,71 +1,64 @@
 <!-- home/home.html -->
-<section class="hero" id="home" cover-up="1" background-image="assets/images/site/hero.jpg">
-	<article class="no-padding">
-		<hgroup>
-			<h1>Software <i>re</i>invented.</h1>
-			<h2>We specialize in innovative technical software.</h2>
-		</hgroup>
-	</article>
-</section>
-<section class="shadow" id="software">
-	<article class="columns">
-		<div class="column third">
-			<i class="icon-cogs"></i>
-			<h2>Industrial<br />Automation</h2>
+<div class="hero" id="home" background-image="assets/images/site/hero.jpg">
+	<header>
+		<h1>Software <i>re</i>invented.</h1>
+		<p>We specialize in innovative technical software.</p>
+	</header>
+</div>
+<section class="section padded" id="software">
+	<div class="confined software">
+		<div class="item">
+			<h2><i class="icon icon-cogs"></i> Industrial Automation</h2>
 			<p>We produce SCADA and HMI software for industrial automation projects. Using hardware simulation, both development time and occurence of bugs are greatly reduced, while the use of web-based interfaces eliminates platform dependency and software licensing fees.</p>
-			<p><a ui-sref="industrial" title="Industrial automation">Find out more</a></p>
+			<p><a ui-sref="home.contact" title="Industrial automation">Find out more</a></p>
 		</div>
-		<div class="column third">
-			<i class="icon-plug"></i>
-			<h2>Embedded<br />Software</h2>
+		<div class="item">
+			<h2><i class="icon icon-plug"></i> Embedded Software</h2>
 			<p>Our experienced embedded software programmers offer expertise on a range of platforms, such as Arduino, Raspberry Pi and Microchip. Our multi-disciplinary team can program the controllers, develop the interfaces, and connect to a graphical user interface.</p>
-			<p><a ui-sref="embedded" title="Embedded software">Find out more</a></p>
+			<p><a ui-sref="home.contact" title="Embedded software">Find out more</a></p>
 		</div>
-		<div class="column third">
-			<i class="icon-database"></i>
-			<h2>Technical<br />Applications</h2>
+		<div class="item">
+			<h2><i class="icon icon-database"></i> Technical Applications</h2>
 			<p>We can develop a broad range of technical software and applications for you. Our developers are experienced in a variety of programming languages and development frameworks, such as C++, C#, Java, Qt, Python, PHP, Laravel, Javascript, AngularJS and Node.</p>
-			<p><a ui-sref="technical" title="Technical applications">Find out more</a></p>
+			<p><a ui-sref="home.contact" title="Technical applications">Find out more</a></p>
 		</div>
-	</article>
+	</div>
 </section>
-<section class="shadow-breaker"></section>
-<section class="projects" id="projects">
-	<project ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
+<section class="section projects" id="projects">
+	<div class="project" ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
 		<div class="cover" ng-show="Project.focus">
 			<div class="info">
 				<h2 ng-bind-html="Project.name"></h2>
 				<p ng-bind-html="Project.tagline"></p>
 			</div>
 		</div>
-	</project>
+	</div>
 </section>
-<section class="shadow">
-	<article class="less-padding flex">
-		<div class="challenge-slogan">
-			<h2>Transform your idea into reality</h2>
+<section class="section padded">
+	<div class="confined challenge">
+		<header>
+			<h1>Transform your idea into reality</h1>
 			<p>The above will give you a small taste of our expertise, but we are always looking for a new challenge!</p>
-		</div>
-		<div class="challenge-cta">
-			<a class="button" ui-sref="home.contact" ng-click="scrollTo('contact')">Tell me more!</a>
-		</div>
-	</article>
+		</header>
+		<button type="button" class="button call-to-action" ui-sref="home.contact">Tell me more!</button>
+	</div>
 </section>
-<section class="shadow dark flex" id="company">
-	<article class="right">
-		<h2>About us</h2>
-		<p>Founded in 2005 in Delft, The Netherlands, Digitalization has grown into a reliable and innovative software partner, specialized in technical projects ranging from industrial automation to embedded software and web applications. In the 10 years that we have been providing software services, our multidisciplinary team has built up a consistent track record of delivering high quality software, on time and at competitive rates.</p>
-		<p>The opening in 2011 of our New Zealand office located in Wellington has enabled us to provide a truly global service with round the clock support for our clients.</p>
-		<p>We are always on the lookout for new opportunities. Get in touch with us if you have a project we might be able to help you with.</p>
-		<p><a class="button" ui-sref="home.contact" ng-click="scrollTo('contact')">Contact us</a></p>
-	</article>
-	<aside class="left">
-		<img src="assets/images/site/delft.jpg" />
-		<img src="assets/images/site/wellington.jpg" />
-	</aside>
+<section class="section padded dark" id="company">
+	<div class="confined company">
+		<div class="text">
+			<h1>About us</h1>
+			<p>Founded in 2005 in Delft, The Netherlands, Digitalization has grown into a reliable and innovative software partner, specialized in technical projects ranging from industrial automation to embedded software and web applications. In the 10 years that we have been providing software services, our multidisciplinary team has built up a consistent track record of delivering high quality software, on time and at competitive rates.</p>
+			<p>The opening in 2011 of our New Zealand office located in Wellington has enabled us to provide a truly global service with round the clock support for our clients.</p>
+			<p>We are always on the lookout for new opportunities. Get in touch with us if you have a project we might be able to help you with.</p>
+			<p><a class="button" ui-sref="home.contact" ng-click="scrollTo('contact')">Contact us</a></p>
+		</div>
+		<div class="images">
+			<img src="assets/images/site/delft.jpg" />
+			<img src="assets/images/site/wellington.jpg" />
+		</div>
 </section>
-<section class="shadow">
-	<article class="logos no-padding">
+<section class="section padded" id="clients">
+	<div class="confined client-logos">
 		<div><img src="assets/images/logos/tno.png" /></div>
 		<div><img src="assets/images/logos/eurofins.png" /></div>
 		<div><img src="assets/images/logos/tecnic.png" /></div>
@@ -81,55 +74,65 @@
 		<div><img src="assets/images/logos/octatube.png" /></div>
 		<div><img src="assets/images/logos/rhine.png" /></div>
 		<div><img src="assets/images/logos/ucp.png" /></div>
-	</article>
+	</div>
 </section>
-<section class="notes overlay" background-scroll="assets/images/large/20140122-Machines-007.jpg" scroll-x="0.2" scroll-y="0.5">
-	<article>
+<section class="section padded overlay" background-scroll="assets/images/large/20140122-Machines-007.jpg" scroll-x="0.2" scroll-y="0.5">
+	<div class="notes">
 		<div class="note">
-			<h4 class="icon-gauge">Faster results</h4>
+			<h2><i class="icon icon-gauge"></i> Faster results</h2>
 			<p>Agile methodology and hardware simulation allows concurrent software and hardware development.</p>
-			<p><a ui-sref="industrial">Find out more</a></p>
+			<p><a ui-sref="home.contact" class="pointer">Find out more</a></p>
 		</div>
 		<div class="note">
-			<h4 class="icon-megaphone">Join our team</h4>
+			<h2><i class="icon icon-megaphone"></i> Join our team</h2>
 			<p>Interested in joining our team as a versatile software developer? We'd love to talk to you about your options!</p>
-			<p><a ui-sref="vacancies">Find out more</a></p>
+			<p><a ui-sref="home.contact" class="pointer">Find out more</a></p>
 		</div>
-		<span class="linebreak"></span>
-	</article>
+	</div>
 </section>
-<section class="blue no-bottom shadow flex" id="contact">
-	<article class="left">
-		<h2>Get in touch</h2>
+<section class="section padded blue" id="contact">
+	<div class="confined contact">
+		<h1>Get in touch</h1>
 		<p>Want to know more or get in touch with us? Fill out the form below and we'll get back to you!</p>
-		<form name="Form" ng-submit="submitForm(contact)"  novalidate ng-model-options="{updateOn: 'default blur', debounce: {default: 500, blur: 0}}">
-			<input type="text" name="name" id="name" ng-model="contact.name" required placeholder="name" />
-			<span class="error" ng-show="Form.$submitted || Form.name.$dirty" ng-messages="Form.name.$error">
-				<p class="message" ng-message="required">Please fill out your name.</p>
-			</span>
-			<input type="email" name="email" id="email" ng-model="contact.email" required placeholder="e-mail address" />
-			<span class="error" ng-show="Form.$submitted || Form.email.$dirty" ng-messages="Form.email.$error">
-				<p class="message" ng-message="required">Please fill out your e-mail address so we can get in touch with you.</p>
-				<p class="message" ng-message="email">Please enter a valid e-mail address.</p>
-			</span>
-			<input type="phone" name="phone" id="phone" ng-model="contact.phone" placeholder="phone number (optional)" />
-			<textarea name="question" id="question" ng-model="contact.question" required placeholder="your question or comments"></textarea>
-			<span class="error" ng-show="Form.$submitted || Form.question.$dirty" ng-messages="Form.question.$error">
-				<p class="message" ng-message="required">Please fill out your question or comments.</p>
-			</span>
-			<button class="button primary" type="submit">Submit</button>
-		</form>
-	</article>
-	<aside class="blue-box">
-		<div class="inner">
-			<h6>Netherlands office</h6>
-			<p>Rotterdamseweg 183 c<br />2629 HD Delft</p>
-			<p>+31 (0)15 268 25 69<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>
-			<h6>New Zealand office</h6>
-			<p>113 Tory Street<br />Wellington 6011</p>
-			<p>+64 (0)22 100 1067<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>
-			<p class="no-mobile">&nbsp;</p>
-			<span class="icon-paper-plane large-icon"></span>
+		<div class="contact-section">
+			<div class="contact-form">
+				<form class="form" name="contactForm" ng-submit="submitContactForm(contact)" novalidate ng-model-options="{updateOn: 'blur', debounce: {blur: 0}}">
+					<div class="form-group" ng-class="{'has-error': hasError(contactForm.name, contactForm)}">
+						<input class="form-control" type="text" name="name" id="name" ng-model="contact.name" required placeholder="name" />
+					</div>
+					<div ng-show="contactForm.$submitted || contactForm.name.$dirty" ng-messages="contactForm.name.$error">
+						<p class="error" ng-message="required">Please enter your name</p>
+					</div>
+					<div class="form-group" ng-class="{'has-error': hasError(contactForm.email, contactForm)}">
+						<input class="form-control" type="email" name="email" id="email" ng-model="contact.email" required placeholder="email address" />
+					</div>
+					<div ng-show="contactForm.$submitted || contactForm.email.$dirty" ng-messages="contactForm.email.$error">
+						<p class="error" ng-message="required">Please enter your e-mail address</p>
+						<p class="error" ng-message="email">That e-mail address appears to be invalid.</p>
+					</div>
+					<div class="form-group" ng-class="{'has-error': hasError(contactForm.message, contactForm)}">
+						<textarea class="form-control" name="message" id="message" ng-model="contact.message" required placeholder="your message" rows="5"></textarea>
+					</div>
+					<span ng-show="contactForm.$submitted || contactForm.message.$dirty" ng-messages="contactForm.message.$error">
+						<p class="error" ng-message="required">Please enter your message</p>
+					</span>
+					<button class="button" type="submit" ng-disabled="isSending" ng-bind="isSending?'Sending...':'Submit'">Submit</button>
+					<span class="sent" ng-show="isSent">Thanks for getting in touch! I'll get back to you as soon as I can.</span>
+				</form>
+			</div>
+			<div class="contact-details">
+				<div class="netherlands">
+					<h2>Netherlands office</h2>
+					<p>Rotterdamseweg 183 c<br />2629 HD Delft</p>
+					<p>+31 (0)15 268 25 69<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>
+				</div>
+				<div class="new-zealand">
+					<h2>New Zealand office</h2>
+					<p>113 Tory Street<br />Wellington 6011</p>
+					<p>+64 (0)22 100 1067<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>
+				</div>
+				<i class="icon icon-paper-plane large-icon"></i>
+			</div>
 		</div>
-	</aside>
+	</div>
 </section>
