@@ -1,122 +1,62 @@
 
-/**********************************************************************************
- * Forms
+/**
+ * Input elements
  */
-
-//Form
-form {
-	margin-bottom: @lineHeight;
-}
 input, select, textarea {
 	font-family: @fontFamily;
 	font-size: @fontSizeNormal;
 	font-weight: @fontWeightNormal;
 	color: @colorText;
 }
-::-webkit-input-placeholder {
-	font-size: @fontSizeNormal;
-	color: @colorTextFaded;
-}
-::-moz-placeholder {
-	font-size: @fontSizeNormal;
-	color: @colorTextFaded;
-}
-:-ms-input-placeholder {
-	font-size: @fontSizeNormal;
-	color: @colorTextFaded;
-}
-form label {
+
+/**
+ * Form labels
+ */
+.form-label {
 	display: block;
 	clear: both;
 	height: @lineHeight;
 	line-height: @lineHeight;
-	margin-bottom: @lineHeight/2;
+	margin-bottom: @marginParagraph/2;
 	font-size: @fontSizeSmall;
-	color: @colorTextFaded;
-	text-transform: lowercase;
-}
-form input:not([type='submit']):not([type='file']):not([type='checkbox']):not([type='radio']),
-form select, form textarea {
-	width: 100%;
-	margin-bottom: @lineHeight;
-	color: @colorText;
-	border: 0;
-	.box();
-}
-form textarea {
-	height: @lineHeight*5;
-}
-form input:not([type='submit']):not([type='file']):not([type='checkbox']):not([type='radio']).half {
-	float: left;
-	width: 49%;
-	margin-right: 2%;
-}
-form input:not([type='submit']):not([type='file']):not([type='checkbox']):not([type='radio']).half + .half {
-	margin: 0;
+	color: @colorTextLight;
 }
 
-/**********************************************************************************
- * Checkboxes and radio's
+/**
+ * Form controls
  */
-
-/* Checkboxes/radio inputs */
-input[type='checkbox'], input[type='radio'] {
-	float:					left;
-	opacity:				0;
-	z-index:				3;
-	margin:					0;
-	width:					20px; /* Space for the faux checkbox */
-}
-input[type='checkbox'] + label, input[type='radio'] + label {
-	width:					auto;
-	float:					left;
-	clear:					none;
-	margin-right:			1rem;
-	height:					@lineHeight;
-	cursor:					pointer;
-}
-input[type='checkbox'] + label::before, input[type='radio'] + label::before {
-	display:				block;
-	position:				absolute;
-	content:				'';
-	border:					1px solid #ddd;
-	border-radius:			2px;
-	background: 			#fff;
-	height:					14px;
-	width:					14px;
-	margin:					3px 0 0 -20px;
-	transition:				border 0.2s linear, box-shadow 0.2s linear;
-}
-input[type='radio'] + label::before {
-	border-radius:			50%;
-}
-input[type='checkbox']:checked + label::after, input[type='radio']:checked + label::after {
-	display:				block;
-	position:				absolute;
-	content:				'\e819';
-	margin:					-31px 0 0 -18px;
-	font-size:				0.75rem;
-	color:					#555;
-	font-style:				normal;
-	font-variant: 			normal;
-	text-transform: 		none;
-	text-align: 			center;
-	text-shadow:			none;
-	.font-smoothing(antialiased);
-}
-input[type='radio']:checked + label::after {
-	content:				'\25cf';
-	font-size: 				20px;
-	margin: 				-24px 0 0 -19px;
+.form-control {
+	width: 100%;
+	color: @colorText;
+	border: 1px solid @colorWhite;
+	padding: @lineHeight*0.5 @lineHeight*0.75;
+	background: @colorWhite;
 }
 
-/* Checkbox/radio lists */
-.list {
-	overflow: auto;
+/**
+ * Form groups
+ */
+.form-group {
+	margin-bottom: @marginParagraph/2;
+	&.has-error {
+		.form-control {
+			color: @colorTextError;
+		}
+	}
 }
-.list input[type='checkbox'], .list input[type='radio'] {
-	clear: both;
+
+/**
+ * Placeholders
+ */
+::-webkit-input-placeholder {
+	font-size: @fontSizeNormal;
+	color: @colorTextLight;
 }
-.list input[type='checkbox'] + label, .list input[type='radio'] + label {
-	margin-right: 0;
+::-moz-placeholder {
+	font-size: @fontSizeNormal;
+	color: @colorTextLight;
+}
+:-ms-input-placeholder {
+	font-size: @fontSizeNormal;
+	color: @colorTextLight;
 }

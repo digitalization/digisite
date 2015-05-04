@@ -1,0 +1,71 @@
+
+/**
+ * Notes
+ */
+.notes {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	.note {
+		position: relative;
+		display: inline-block;
+		margin: 2rem 1.5rem;
+		padding: 2rem 3rem;
+		max-width: 400px;
+		text-align: left;
+		p {
+			text-align: left;
+		}
+		h2 {
+			margin-bottom: @lineHeight/2;
+		}
+		.icon {
+			position: absolute;
+			right: 10%;
+			top: 2rem;
+			color: @colorPrimary;
+		}
+		&, &:after {
+			box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.4);
+			background-color: #f3f3f3;
+			background-image: -moz-linear-gradient(20deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 50%,rgba(255,255,255,0.8) 100%); /* FF3.6+ */
+			background-image: -webkit-linear-gradient(20deg, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.8) 100%); /* Chrome10+,Safari5.1+ */
+			background-image: -o-linear-gradient(20deg, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.8) 100%); /* Opera 11.10+ */
+			background-image: -ms-linear-gradient(20deg, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.8) 100%); /* IE10+ */
+			background-image: linear-gradient(20deg, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0.8) 100%); /* W3C */
+		}
+		&:after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			transform:rotate(-7deg);
+			-ms-transform:rotate(-7deg);
+			-webkit-transform:rotate(-7deg);
+		}
+	}
+
+	/**
+	 * Media queries
+	 */
+	@media (min-width: 768px) {
+		.note {
+			margin: 2rem 0 2rem 30%;
+			&:first-child {
+				margin: 2rem 30% 2rem 0;
+			}
+		}
+	}
+	@media (min-width: 1024px) {
+		.display-flex();
+		.justify-content(space-around);
+		.note {
+			margin: 2rem 0 !important;
+			.flex(1 0 auto);
+		}
+	}
+}

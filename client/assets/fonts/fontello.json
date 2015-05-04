@@ -13,6 +13,12 @@
       "src": "fontawesome"
     },
     {
+      "uid": "a14be0c7e0689076e2bdde97f8e309f9",
+      "css": "plug",
+      "code": 59400,
+      "src": "fontawesome"
+    },
+    {
       "uid": "5d595124cecf472869d1cdc020da0ccc",
       "css": "upload-cloud",
       "code": 59399,
@@ -34,6 +40,18 @@
       "uid": "489090690d8bd1745e365485946e20a8",
       "css": "megaphone",
       "code": 59394,
+      "src": "entypo"
+    },
+    {
+      "uid": "248db7c0563d8cee80b7041f7736dcad",
+      "css": "database",
+      "code": 59401,
+      "src": "entypo"
+    },
+    {
+      "uid": "9c7fd7637a41b59a358cb70893f945a5",
+      "css": "rocket",
+      "code": 59397,
       "src": "entypo"
     },
     {

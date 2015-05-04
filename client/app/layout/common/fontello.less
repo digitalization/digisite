@@ -4,27 +4,29 @@
  */
 
 @font-face {
-  font-family: 'Fontello';
-  src: url('@{urlAssets}fonts/fontello.eot');
-  src: url('@{urlAssets}fonts/fontello.eot#iefix') format('embedded-opentype'),
-	   url('@{urlAssets}fonts/fontello.woff') format('woff'),
-	   url('@{urlAssets}fonts/fontello.ttf') format('truetype'),
-	   url('@{urlAssets}fonts/fontello.svg#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
 	font-family: 'Fontello';
-	src: url('@{urlAssets}fonts/fontello.svg#fontello') format('svg');
-  }
+	src: url('@{urlAssets}fonts/fontello.eot');
+	src: url('@{urlAssets}fonts/fontello.eot#iefix') format('embedded-opentype'),
+		 url('@{urlAssets}fonts/fontello.woff') format('woff'),
+		 url('@{urlAssets}fonts/fontello.ttf') format('truetype'),
+		 url('@{urlAssets}fonts/fontello.svg#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windows */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: 'Fontello';
+		src: url('@{urlAssets}fonts/fontello.svg#fontello') format('svg');
+	}
 }
 
 /* Class definition */
 [class^="icon-"]:before, [class*=" icon-"]:before {
+	display: inline-block;
+	vertical-align: middle;
 	font-family: 'Fontello';
+	font-size: 110%;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -32,13 +34,6 @@
 	text-transform: none;
 	text-decoration: none;
 	speak: none;
-	display: inline-block;
-	margin-right: .2rem;
-	font-size: 110%;
-}
-[class^="icon-"]:empty:before, [class*=" icon-"]:empty:before {
-	margin: 0 !important;
-	width: 100%;
 }
 
 /* Icons */
@@ -47,5 +42,8 @@
 .icon-megaphone:before { content: '\e802'; } /* '' */
 .icon-cogs:before { content: '\e803'; } /* '' */
 .icon-linkedin:before { content: '\e804'; } /* '' */
+.icon-rocket:before { content: '\e805'; } /* '' */
 .icon-arrows:before { content: '\e806'; } /* '' */
 .icon-upload-cloud:before { content: '\e807'; } /* '' */
+.icon-plug:before { content: '\e808'; } /* '' */
+.icon-database:before { content: '\e809'; } /* '' */

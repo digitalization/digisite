@@ -6,9 +6,8 @@ angular.module('DigiSite', [
 
 	//Angular
 	'ngAnimate',
-	'ngTouch',
-	'ngCookies',
 	'ngSanitize',
+	'ngMessages',
 
 	//3rd party
 	'ui.router',
@@ -17,25 +16,15 @@ angular.module('DigiSite', [
 	'Templates.App',
 	'Templates.Common',
 
-	//Common services and directives
-	'Common.Utils.StringUtils.Service',
-	'Common.Utils.StorageUtils.Service',
-	'Common.Layout.detectScrolling.Directive',
-	'Common.Layout.coverUp.Directive',
-	'Common.Layout.backgroundImage.Directive',
-	'Common.Layout.backgroundScroll.Directive',
-
-	//App controller
+	//Site modules
 	'DigiSite.Controller',
-
-	//App modules
-	'DigiSite.Layout',
-	'DigiSite.Home',
-	'DigiSite.Projects',
-	'DigiSite.Vacancies'
-
-	//App components
-
+	'DigiSite.Nav',
+	'DigiSite.Home'
+	/*'DigiSite.Vacancies',
+	'DigiSite.Industrial',
+	'DigiSite.Embedded',
+	'DigiSite.Webbased',
+	'DigiSite.Technical'*/
 ])
 
 /**
@@ -44,11 +33,7 @@ angular.module('DigiSite', [
 .constant('DigiSite', {
 	name:		'Digitalization',
 	version:	'7.0.0',
-	copyright:	2015,
-	error:		{
-		SOME_ERROR: 	1,
-		OTHER_ERROR:	2
-	}
+	copyright:	2015
 })
 
 /**
@@ -75,6 +60,21 @@ angular.module('DigiSite', [
 /**
  * Run logic
  */
-.run(function() {
+.run(function($rootScope, $location, $window, DigiSite) {
 
+	//Set app constant in root scope
+	$rootScope.DigiSite = DigiSite;
+
+	/**
+	 * On state changes, trigger a page view
+	 */
+	$rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+
+		//Track page view
+		if ($window.ga) {
+			$window.ga('send', 'pageview', {
+				page: $location.url()
+			});
+		}
+	});
 });

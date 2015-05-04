@@ -1,0 +1,46 @@
+
+/**
+ * Hero
+ */
+.hero {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	padding-top: 50%;
+	margin-top: @heightHeader;
+	h1, p {
+		color: @colorWhite;
+		text-align: center;
+		text-shadow: 0 0 10px rgba(0,0,0,.75);
+	}
+	h1 {
+		font-size: 2rem;
+		font-weight: @fontWeightBold;
+		margin: -35% 0 0;
+	}
+	p {
+		font-size: 1rem;
+	}
+
+	/**
+	 * Media queries
+	 */
+	@media (min-width: 768px) {
+		margin: 0;
+		h1 {
+			font-size: 3rem;
+			margin: -30% 0 1rem;
+		}
+		p {
+			font-size: 1.5rem;
+		}
+	}
+	@media (min-width: 1024px) {
+		h1 {
+			font-size: 5rem;
+		}
+		p {
+			font-size: 2rem;
+		}
+	}
+}
