@@ -24,7 +24,7 @@
 		</div>
 	</div>
 </section>
-<section class="section projects" id="projects">
+<section class="section dark projects" id="projects">
 	<div class="project" ng-repeat="Project in Projects" background-image="{{Project.thumb}}" ng-cloak ng-mouseenter="Project.focus=true" ng-mouseleave="Project.focus=false" ui-sref="projects.view({projectId:$index})">
 		<div class="cover" ng-show="Project.focus">
 			<div class="info">
