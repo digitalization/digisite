@@ -36,6 +36,21 @@
 	}
 
 	/**
+	 * Menu
+	 */
+	.menu {
+		font-size: 0;
+		li {
+			list-style:	none;
+			vertical-align: top;
+			font-size: @fontSizeNormal;
+			&.home {
+				display: none;
+			}
+		}
+	}
+
+	/**
 	 * Links
 	 */
 	a {
@@ -49,21 +64,6 @@
 		&:hover {
 			text-decoration: none;
 			color: @colorWhite;
-		}
-	}
-
-	/**
-	 * Menu
-	 */
-	.menu {
-		font-size: 0;
-		li {
-			list-style:	none;
-			vertical-align: top;
-			font-size: @fontSizeNormal;
-			&.home {
-				display: none;
-			}
 		}
 	}
 

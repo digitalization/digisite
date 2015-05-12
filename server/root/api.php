@@ -43,12 +43,12 @@ if (strpos($uri, '/api/contact') !== false) {
 	//Instantiate
 	$Mail 				= 	new PHPMailer();
 	$Mail->CharSet		= 	'utf-8';
-	$Mail->From			=	'no-reply@adambuczynski.com';
-	$Mail->FromName		=	'Freelance Website';
+	$Mail->From			=	'no-reply@digitalization.nl';
+	$Mail->FromName		=	'Digi Website';
 	$Mail->Subject 		= 	'Contact request through website';
-	$Mail->Body 		= 	"<p>Name: $name<br/>E-mail: $email</p><p>Question: ".nl2br($message)."</p>";
+	$Mail->Body 		= 	"<p>Name: $name<br/>E-mail: $email</p><p>Message: ".nl2br($message)."</p>";
 	$Mail->IsHTML(true);
-	$Mail->AddAddress('me@adambuczynski.com');
+	$Mail->AddAddress('info@digitalization.nl');
 	$Mail->Send();
 
 	//Output result
