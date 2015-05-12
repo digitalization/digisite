@@ -49,7 +49,6 @@ if (strpos($uri, '/api/contact') !== false) {
 	$Mail->Body 		= 	"<p>Name: $name<br/>E-mail: $email</p><p>Message: ".nl2br($message)."</p>";
 	$Mail->IsHTML(true);
 	$Mail->AddAddress('info@digitalization.nl');
-	$Mail->AddAddress('adambuczynski@gmail.com');
 	$Mail->Send();
 
 	//Output result
