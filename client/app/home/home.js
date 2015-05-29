@@ -4,6 +4,7 @@
  */
 angular.module('DigiSite.Home', [
 	'DigiSite.Home.Controller',
+	'DigiSite.Home.Flippable.Directive',
 	'Common.Layout.coverUp.Directive',
 	'Common.Layout.backgroundImage.Directive',
 	'Common.Layout.backgroundScroll.Directive'
