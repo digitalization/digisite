@@ -14,21 +14,21 @@ angular.module('DigiSite.Shared.Projects.Service', [])
 			client: "TECNIC",
 			tagline: "Automation system with web-based interface, distribution logic and LIMS interaction.",
 			keywords: ["SCADA", "LIMS", "PLC", "HMI"],
-			thumb: "assets/images/projects/inobot-1.jpg"
-		},
-		{
-			name: "Lavetan",
-			client: "TECNIC",
-			tagline: "Automation system with web-based interface, distribution logic and LIMS interaction.",
-			keywords: ["SCADA", "LIMS", "PLC", "HMI"],
-			thumb: "assets/images/projects/inobot-2.jpg"
+			thumb: "assets/images/projects/inobot-3.jpg"
 		},
 		{
 			name: "Inobot",
 			client: "TECNIC",
 			tagline: "Standalone or integrateable robot used to automate 3M Petrifilm&#8482; innoculation.",
 			keywords: ["SCADA", "LIMS", "PLC"],
-			thumb: "assets/images/projects/inobot-3.jpg"
+			thumb: "assets/images/projects/inobot-1.jpg"
+		},
+		{
+			name: "SelectaDNA",
+			client: "Rhine Group B.V.",
+			tagline: "Secure database for anti theft kit registration with police login.",
+			keywords: ["Security", "Web Application"],
+			thumb: "assets/images/projects/sdna.jpg"
 		},
 		{
 			name: "TAPR",
