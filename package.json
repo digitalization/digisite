@@ -4,7 +4,11 @@
   "author": "Digitalization",
   "description": "",
   "homepage": "http://www.digitalization.nl",
-  "repository": "https://github.com/Digitalization/Digi-Website",
+	"private": true,
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/digitalization/digisite.git"
+	},
   "dependencies": {},
   "optionalDependencies": {},
   "devDependencies": {
