@@ -14,7 +14,7 @@ angular.module('DigiSite.Shared.Projects.Service', [])
 			client: "TECNIC",
 			tagline: "Automation system with web-based interface, distribution logic and LIMS interaction.",
 			keywords: ["SCADA", "LIMS", "PLC", "HMI"],
-			thumb: "assets/images/projects/inobot-3.jpg"
+			thumb: "assets/images/projects/eurofins.jpg"
 		},
 		{
 			name: "Inobot",
