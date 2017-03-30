@@ -1,0 +1,42 @@
+<section class="section padded blue" id="contact">
+	<div class="confined HomeContact">
+		<h1>Get in touch</h1>
+		<p>Want to know more or get in touch with us? Fill out the form below and we'll get back to you!</p>
+		<div class="contact-section">
+			<div class="contact-form">
+				<form class="form" name="$ctrl.form" ng-submit="$ctrl.submit()" novalidate ng-model-options="{updateOn: 'blur', debounce: {blur: 0}}">
+					<div class="form-group" has-error="$ctrl.form.name">
+						<input class="form-control" type="text" name="name" id="name" ng-model="contact.name" required placeholder="name" />
+					</div>
+					<div ng-show="$ctrl.form.$submitted || $ctrl.form.name.$dirty" ng-messages="$ctrl.form.name.$error">
+						<p class="error" ng-message="required">Please enter your name</p>
+					</div>
+					<div class="form-group" has-error="$ctrl.form.email">
+						<input class="form-control" type="email" name="email" id="email" ng-model="contact.email" required placeholder="email address" />
+					</div>
+					<div ng-show="$ctrl.form.$submitted || $ctrl.form.email.$dirty" ng-messages="$ctrl.form.email.$error">
+						<p class="error" ng-message="required">Please enter your e-mail address</p>
+						<p class="error" ng-message="email">That e-mail address appears to be invalid.</p>
+					</div>
+					<div class="form-group" has-error="$ctrl.form.message">
+						<textarea class="form-control" name="message" id="message" ng-model="contact.message" required placeholder="your message" rows="5"></textarea>
+					</div>
+					<span ng-show="$ctrl.form.$submitted || $ctrl.form.message.$dirty" ng-messages="$ctrl.form.message.$error">
+						<p class="error" ng-message="required">Please enter your message</p>
+					</span>
+					<button class="button" type="submit" ng-disabled="$ctrl.isSending" ng-bind="$ctrl.isSending ? 'Sending...' : 'Submit'">Submit</button>
+					<span class="sent" ng-show="$ctrl.isSent">Thanks for getting in touch! We'll get back to you as soon as possible.</span>
+				</form>
+			</div>
+			<div class="contact-details">
+				<div class="netherlands">
+					<h2>Address</h2>
+					<p>Rotterdamseweg 183 c<br />2629 HD Delft</p>
+          <h2>Contact details</h2>
+					<p>+31 (0)15 301 0113<br /><a href="mailto:info@digitalization.nl">info@digitalization.nl</a></p>
+				</div>
+				<i class="icon icon-paper-plane large-icon"></i>
+			</div>
+		</div>
+	</div>
+</section>

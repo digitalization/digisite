@@ -1,0 +1,59 @@
+
+.btn {
+	cursor: pointer;
+	display: inline-block;
+	font-family: $fontFamily;
+	font-size: $fontSizeSmall;
+	font-weight: $fontWeightBold;
+	text-transform: uppercase;
+	text-align: center;
+	background: $colorBgButton;
+	color: $colorWhite;
+	padding: 0 $lineHeight*0.75;
+	margin: 0 .75rem $marginParagraph 0;
+	line-height: 2.5rem;
+	height: 2.5rem;
+	border: 1px solid transparent;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+
+	/**
+	 * Block buttons
+	 */
+	&.btn-block {
+		display: block;
+		width: 100%;
+	}
+
+	/**
+	 * Hover
+	 */
+	&:hover {
+		text-decoration: none;
+	}
+
+	/**
+	 * Primary button
+	 */
+	&.btn-primary {
+		background: $colorPrimary;
+		&:hover {
+			background: darken($colorPrimary, 5%);
+		}
+		&[disabled] {
+			background: lighten($colorPrimary, 10%);
+		}
+	}
+
+	/**
+	 * Social media buttons
+	 */
+	&.btn-facebook {
+		background: $colorFacebook;
+	}
+	&.btn-google {
+		background: $colorGoogle;
+	}
+	&.btn-twitter {
+		background: $colorTwitter;
+	}
+}

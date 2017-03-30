@@ -1,0 +1,56 @@
+
+/* Font family */
+$fontFamily: 'Open Sans', sans-serif;
+
+/* Font weights and styles */
+$fontWeightNormal: 300;
+$fontWeightBold: 600;
+$fontStyleNormal: normal;
+$fontStyleItalic: italic;
+
+/* Font sizes */
+$fontSizeNormal: 1rem;
+$fontSizeSmall: .9rem;
+
+/* Line height */
+$lineHeight: 1.7rem;
+
+/* Basic colors */
+$colorBlack: #000;
+$colorWhite: #fff;
+$colorPrimary: #2078be;
+
+/* Text colors */
+$colorText: #444448;
+$colorTextLight: #bbbdc0;
+$colorTextFaded: rgba(255,255,255,.4);
+$colorTextLink: $colorPrimary;
+$colorTextError: $colorPrimary;
+$colorTextCode: #696969;
+
+/* Background colors */
+$colorBgDark: #444448;
+$colorBgLight: #e1e0ec;
+$colorBgHeader: #128dd3;
+$colorBgButton: #bbb;
+$colorBgCode: rgba(0,0,30,.07);
+
+/* Border colors */
+$colorBorderLight: rgba(255,255,255,.1);
+$colorBorderDark: rgba(0,0,0,.07);
+
+/* Social media colors */
+$colorFacebook: #3b5998;
+$colorTwitter: #55acee;
+$colorGoogle: #dd4b39;
+$colorPinterest: #cb2027;
+$colorLinkedIn: #007bb6;
+$colorWhatsapp: #2e8a06;
+
+/* Vertical margins */
+$marginParagraph: $lineHeight;
+$marginSection: 2rem;
+
+/* Header */
+$heightHeader: 3rem;
+$heightHeaderTall: 4.5rem;
