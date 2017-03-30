@@ -1,0 +1,107 @@
+
+.work-items {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	work-item {
+		width: 50%;
+		height: 120px;
+		position: relative;
+		cursor: pointer;
+		.wrap {
+      perspective: 800px;
+  		transform-style: preserve-3d;
+  		transition: transform 1s;
+  		&.flipped {
+  			transform: rotateY(180deg);
+  		}
+    }
+	}
+	.logo, .text {
+		position: absolute;
+		height: 120px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		backface-visibility: hidden;
+		&:before {
+			content: ' ';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+		img, span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	.text {
+		font-size: .75rem;
+		transform: rotateY(180deg);
+    small {
+      font-size: 0.7rem;
+      display: block;
+      color: #aaa;
+      padding-top: 0.2rem;
+    }
+	}
+	@media (max-width: 549px) {
+		&:nth-child(odd) {
+			.logo, .text {
+				padding-right: 1rem;
+			}
+		}
+		&:nth-child(even) {
+			.logo, .text {
+				padding-left: 1rem;
+			}
+		}
+	}
+	@media (min-width: 550px) and (max-width: 1023px) {
+		work-item, .logo, .text {
+			height: 140px;
+		}
+		.text {
+			font-size: $fontSizeSmall;
+		}
+		work-item {
+			width: 33%;
+			&:nth-child(3n+1) {
+				.logo, .text {
+					padding-right: 2rem;
+				}
+			}
+			&:nth-child(3n+2) {
+				.logo, .text {
+					padding: 0 1rem;
+				}
+			}
+			&:nth-child(3n+3) {
+				.logo, .text {
+					padding-left: 2rem;
+				}
+			}
+		}
+	}
+	@media (min-width: 1024px) {
+		work-item, .logo, .text {
+			height: 180px;
+			width: 250px;
+		}
+		.text {
+			font-size: $fontSizeSmall;
+			letter-spacing: 1px;
+		}
+		work-item {
+			&:nth-child(3n+1) {
+				margin: 0 2rem 0 0;
+			}
+			&:nth-child(3n+2) {
+				margin: 0 1rem;
+			}
+			&:nth-child(3n+3) {
+				margin: 0 0 0 2rem;
+			}
+		}
+	}
+}

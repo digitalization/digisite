@@ -1,0 +1,55 @@
+
+/* Font family */
+$fontFamily: 'Open Sans', sans-serif;
+
+/* Font weights and styles */
+$fontWeightNormal: 300;
+$fontWeightBold: 600;
+$fontStyleNormal: normal;
+$fontStyleItalic: italic;
+
+/* Font sizes */
+$fontSizeNormal: 1rem;
+$fontSizeSmall: .9rem;
+
+/* Line height */
+$lineHeight: 1.7rem;
+
+/* Basic colors */
+$colorBlack: #000;
+$colorWhite: #fff;
+$colorPrimary: #2078be;
+
+/* Text colors */
+$colorText: #333;
+$colorTextLight: #ccc;
+$colorTextLink: $colorPrimary;
+$colorTextError: #c22;
+
+/* Background colors */
+$colorBgDark: #444448;
+$colorBgLight: #e1e0ec;
+$colorBgHeader: #128dd3;
+$colorBgButton: #bbb;
+$colorBgCode: rgba(0,0,30,.07);
+
+/* Background colors */
+$colorBgBody: #f5f5f5;
+$colorBgMain: #fff;
+$colorBgDarkGrey: #333;
+$colorBgLightBlue: #84b4db;
+$colorBgLightGrey: #eee;
+$colorBgButton: $colorPrimary;
+$colorBgButtonPrimary: $colorPrimary;
+
+/* Shadows */
+$shadowSections: 0 0 40px rgba(0,0,0,0.6);
+$shadowImages: 10px 10px 30px rgba(0,0,0,0.3);
+
+/* Vertical margins */
+$marginParagraph: $lineHeight;
+$marginSection: 2rem;
+
+/* Header */
+$heightHeader: 3rem;
+$heightHeaderTall: 4.5rem;

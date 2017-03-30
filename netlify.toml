@@ -1,0 +1,18 @@
+# Global settings applied to the whole site
+[build]
+  publish = "dist/production"
+  command = "npm run build:prod"
+
+# Production context
+[context.production]
+  publish = "dist/production"
+  command = "npm run build:prod"
+  [context.production.environment]
+    APP_ENV = "production"
+
+# Dev context
+[context.dev]
+  publish = "dist/dev"
+  command = "npm run build:dev"
+  [context.dev.environment]
+    APP_ENV = "dev"

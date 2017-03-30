@@ -1,0 +1,72 @@
+
+.HomeProjects {
+	display: flex;
+	flex-wrap: wrap;
+	.project {
+		position: relative;
+		width: 50%;
+		background-size: cover;
+		cursor: pointer;
+		-webkit-filter: grayscale(10%);
+		.cover {
+			transition: opacity 0.3s linear;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: fade-out($colorPrimary, 0.35);
+			.info {
+				display: inline-block;
+				vertical-align: middle;
+				width: 100%;
+				padding: 0 1rem 0 2rem; //Extra padding on the left to compensate negative margin of :before
+				p {
+					display: none;
+				}
+			}
+		}
+		.cover:before {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			width: 0;
+			vertical-align: middle;
+			margin-right: -1rem; //To make sure the elements fit on one line
+		}
+		.cover.ng-show, .cover.ng-hide.ng-hide.active {
+			opacity: 1;
+		}
+		.cover.ng-hide, .cover.ng-show.ng-show.active {
+			opacity: 0;
+		}
+		h2, p {
+			text-align: center;
+			color: $colorWhite;
+		}
+		p {
+			font-size: $fontSizeSmall;
+		}
+		h2 {
+			font-weight: $fontWeightBold;
+			margin-bottom: 0;
+		}
+		&:before {
+			content: "";
+			display: block;
+			padding-top: 66.6667%;
+		}
+	}
+	@media (min-width: 768px) {
+		.project {
+			width: 33.33333%;
+			.cover {
+				.info {
+					p {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

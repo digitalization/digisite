@@ -1,0 +1,62 @@
+
+/**
+ * Input elements
+ */
+input, select, textarea {
+	font-family: $fontFamily;
+	font-size: $fontSizeNormal;
+	font-weight: $fontWeightNormal;
+	color: $colorText;
+}
+
+/**
+ * Form labels
+ */
+.form-label {
+	display: block;
+	clear: both;
+	height: $lineHeight;
+	line-height: $lineHeight;
+	margin-bottom: $marginParagraph/2;
+	font-size: $fontSizeSmall;
+	color: $colorTextLight;
+}
+
+/**
+ * Form controls
+ */
+.form-control {
+	width: 100%;
+	color: $colorText;
+	border: 1px solid $colorWhite;
+	padding: $lineHeight*0.5 $lineHeight*0.75;
+	background: $colorWhite;
+}
+
+/**
+ * Form groups
+ */
+.form-group {
+	margin-bottom: $marginParagraph/2;
+	&.has-error {
+		.form-control {
+			color: $colorTextError;
+		}
+	}
+}
+
+/**
+ * Placeholders
+ */
+::-webkit-input-placeholder {
+	font-size: $fontSizeNormal;
+	color: $colorTextLight;
+}
+::-moz-placeholder {
+	font-size: $fontSizeNormal;
+	color: $colorTextLight;
+}
+:-ms-input-placeholder {
+	font-size: $fontSizeNormal;
+	color: $colorTextLight;
+}
