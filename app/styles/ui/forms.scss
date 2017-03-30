@@ -1,4 +1,7 @@
 
+/**
+ * Input elements
+ */
 input, select, textarea {
 	font-family: $fontFamily;
 	font-size: $fontSizeNormal;
@@ -6,6 +9,9 @@ input, select, textarea {
 	color: $colorText;
 }
 
+/**
+ * Form labels
+ */
 .form-label {
 	display: block;
 	clear: both;
@@ -16,14 +22,20 @@ input, select, textarea {
 	color: $colorTextLight;
 }
 
+/**
+ * Form controls
+ */
 .form-control {
 	width: 100%;
 	color: $colorText;
-	border: 1px solid $colorBorderDark;
+	border: 1px solid $colorWhite;
 	padding: $lineHeight*0.5 $lineHeight*0.75;
 	background: $colorWhite;
 }
 
+/**
+ * Form groups
+ */
 .form-group {
 	margin-bottom: $marginParagraph/2;
 	&.has-error {
@@ -33,6 +45,9 @@ input, select, textarea {
 	}
 }
 
+/**
+ * Placeholders
+ */
 ::-webkit-input-placeholder {
 	font-size: $fontSizeNormal;
 	color: $colorTextLight;

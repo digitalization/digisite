@@ -1,19 +1,21 @@
 
-.client-logos {
+.work-items {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	.wrap {
+	work-item {
 		width: 50%;
 		height: 120px;
 		position: relative;
 		cursor: pointer;
-		perspective: 800px;
-		transform-style: preserve-3d;
-		transition: transform 1s;
-		&.flipped {
-			transform: rotateY(180deg);
-		}
+		.wrap {
+      perspective: 800px;
+  		transform-style: preserve-3d;
+  		transition: transform 1s;
+  		&.flipped {
+  			transform: rotateY(180deg);
+  		}
+    }
 	}
 	.logo, .text {
 		position: absolute;
@@ -56,13 +58,13 @@
 		}
 	}
 	@media (min-width: 550px) and (max-width: 1023px) {
-		.wrap, .logo, .text {
+		work-item, .logo, .text {
 			height: 140px;
 		}
 		.text {
 			font-size: $fontSizeSmall;
 		}
-		.wrap {
+		work-item {
 			width: 33%;
 			&:nth-child(3n+1) {
 				.logo, .text {
@@ -82,7 +84,7 @@
 		}
 	}
 	@media (min-width: 1024px) {
-		.wrap, .logo, .text {
+		work-item, .logo, .text {
 			height: 180px;
 			width: 250px;
 		}
@@ -90,7 +92,7 @@
 			font-size: $fontSizeSmall;
 			letter-spacing: 1px;
 		}
-		.wrap {
+		work-item {
 			&:nth-child(3n+1) {
 				margin: 0 2rem 0 0;
 			}

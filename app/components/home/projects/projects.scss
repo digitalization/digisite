@@ -15,7 +15,7 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			background: fadeout($colorPrimary, 35%);
+			background: fade-out($colorPrimary, 0.35);
 			.info {
 				display: inline-block;
 				vertical-align: middle;

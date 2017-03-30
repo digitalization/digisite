@@ -56,7 +56,7 @@ angular.module('Site.Home.Contact', [])
     //Create data for request
     const data = {
       from: this.contact.name + '<' + this.contact.email + '>',
-      to: 'adam@reis.nz',
+      to: 'info@digitalization.nl',
       subject: 'Contact request through website',
       fields: this.contact,
     };

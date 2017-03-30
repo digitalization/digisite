@@ -14,7 +14,7 @@
 			margin-top: -.5rem;
 		}
 		.sent {
-			transition: opacity .2s linear;
+			.transition(opacity .2s linear);
 			&.ng-hide-remove, &.ng-hide-add.ng-hide-add-active {
 				opacity: 0;
 			}
@@ -34,7 +34,7 @@
 		background: $colorPrimary;
 		color: $colorWhite;
 		padding: 2rem;
-		box-shadow: -15px 15px 20px rgba(0,0,0,0.15);
+		.box-shadow(-15px 15px 20px rgba(0,0,0,0.15));
 		h2 {
 			color: #8fbbde;
 			font-size: $fontSizeSmall;

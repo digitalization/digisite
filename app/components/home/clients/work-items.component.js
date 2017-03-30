@@ -10,7 +10,7 @@ angular.module('Site.Home.Clients.WorkItems.Component', [
  * Component
  */
 .component('workItems', {
-  template: `<div class="client-logos" ng-transclude></div>`,
+  template: `<div class="work-items" ng-transclude></div>`,
   transclude: true,
   controller() {
 

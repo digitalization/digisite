@@ -9,4 +9,13 @@ angular.module('Site.Home.Software', [])
  */
 .component('homeSoftware', {
   templateUrl: 'home/software/software.html',
+})
+
+/**
+ * Config
+ */
+.config($stateProvider => {
+  $stateProvider.state('home.software', {
+    url: 'software',
+  });
 });

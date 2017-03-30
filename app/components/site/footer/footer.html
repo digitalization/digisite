@@ -1,5 +1,15 @@
 <footer class="SiteFooter">
 	<div class="confined">
-		<p>Copyright &copy; 2015-2017 &mdash; Adam Reis<br/><a ng-click="$ctrl.toTop()">Back to top</a></p>
+		<div class="wrapper">
+			<div class="text">
+				<menu ng-cloak>
+					<li ng-repeat="item in $ctrl.menu"><a ui-sref="{{item.sref}}" ng-class="{active: isActiveState(item.sref)}" title="{{item.title}}">{{item.title}}</a></li>
+				</menu>
+				<p>Copyright &copy; 2017 Digitalization</p>
+			</div>
+			<div class="logo">
+				<a class="pointer" ui-sref="home"><img src="images/site/logo.png" /></a>
+			</div>
+		</div>
 	</div>
 </footer>
